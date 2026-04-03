@@ -1,0 +1,50 @@
+https://dbdiagram.io/d/er-6944a28f4bbde0fd74c39f04
+
+Table Пользователи {
+  ID int [pk, increment] // Первичный ключ
+  Имя text [not null, unique]
+  Login text [not null, unique]
+  Пароль text // Хэш пароля
+  Email text
+}
+
+/*
+-- =========================================
+-- ФАЙЛ: queries.sql
+-- ТАБЛИЦА: Пользователи (ID, Имя, Login, Пароль, Email)
+-- =========================================
+
+-- 1. СОЗДАТЬ ТАБЛИЦУ 
+CREATE TABLE Пользователи (
+    ID INTEGER PRIMARY KEY AUTOINCREMENT,
+    Имя TEXT NOT NULL UNIQUE,
+    Login TEXT NOT NULL UNIQUE,
+    Пароль TEXT,
+    Email TEXT
+);
+
+-- 2. РЕГИСТРАЦИЯ (вставить: Имя, Логин, Пароль, Email)
+INSERT INTO Пользователи (Имя, Login, Пароль, Email)
+VALUES ('ВведитеИмя', 'ВведитеЛогин', 'ВведитеХэшПароля', 'ВведитеEmail');
+
+-- 3. ПРОВЕРКА ЛОГИНА (существует ли? ВведитеЛогин)
+SELECT COUNT(*) FROM Пользователи WHERE Login = 'ВведитеЛогин';
+
+-- 4. АВТОРИЗАЦИЯ (получить данные по логину: ВведитеЛогин)
+SELECT ID, Имя, Пароль FROM Пользователи WHERE Login = 'ВведитеЛогин';
+
+-- 5. ПОЛУЧИТЬ ПОЛЬЗОВАТЕЛЯ ПО ID (Введите ID число)
+SELECT ID, Имя, Login, Email FROM Пользователи WHERE ID = ВведитеID;
+
+-- 6. ОБНОВИТЬ EMAIL (ВведитеНовыйEmail, ВведитеID)
+UPDATE Пользователи SET Email = 'ВведитеНовыйEmail' WHERE ID = ВведитеID;
+
+-- 7. ОБНОВИТЬ ПАРОЛЬ (ВведитеНовыйХэш, ВведитеID)
+UPDATE Пользователи SET Пароль = 'ВведитеНовыйХэш' WHERE ID = ВведитеID;
+
+-- 8. УДАЛИТЬ ПОЛЬЗОВАТЕЛЯ (ВведитеID)
+DELETE FROM Пользователи WHERE ID = ВведитеID;
+
+-- 9. ПОКАЗАТЬ ВСЕХ ПОЛЬЗОВАТЕЛЕЙ
+SELECT ID, Имя, Login, Email FROM Пользователи;
+*/
