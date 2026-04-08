@@ -21,6 +21,8 @@ private:
     QTcpServer * pTcpServer;
     QTcpSocket * pTcpSocket;
     dbInterface * db;
+
+    quint16 port;
     //  еще поле
 };
 

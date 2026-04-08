@@ -1,0 +1,10 @@
+.git/
+*.o
+*.user
+*.swp
+Makefile
+EchoServer
+data/
+*.db
+.qtcreator
+readme.txt
