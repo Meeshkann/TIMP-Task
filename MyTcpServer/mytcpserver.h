@@ -6,6 +6,7 @@
 #include <QTcpSocket>
 #include <dbinterface.h>
 #include <postgre_db.h>
+#include <message_parser.h>
 
 class MyTcpServer : public QObject
 {

@@ -1,0 +1,157 @@
+#ifndef MESSAGE_PARSER_H
+#define MESSAGE_PARSER_H
+
+#include <QString>
+#include <QStringList>
+#include <QDebug>
+
+class CommandParser
+{
+public:
+    enum Commands
+    {
+        CMD_UNKNOWN = 0,
+        CMD_REGISTER,
+        CMD_LOGIN,
+        CMD_AUTH,
+        CMD_HELP,
+    };
+
+    Commands stringToCommand(const QString& cmd) {
+        if (cmd == "register" || cmd == "reg") return CMD_REGISTER;
+        if (cmd == "login") return CMD_LOGIN;
+        if (cmd == "auth") return CMD_AUTH;
+        if (cmd == "help" || cmd == "?") return CMD_HELP;
+        return CMD_UNKNOWN;
+    }
+
+
+    QString commandToString(Commands cmd) {
+        switch(cmd) {
+        case CMD_REGISTER: return "REGISTER";
+        case CMD_LOGIN:    return "LOGIN";
+        case CMD_AUTH:     return "AUTH";
+        case CMD_HELP:     return "HELP";
+        default:           return "UNKNOWN";
+        }
+    }
+
+    struct ParsedCommand
+    {
+        Commands command;
+        QStringList params;
+
+        bool is_valid;
+        QString error;
+
+        ParsedCommand() : command(CMD_UNKNOWN), is_valid(false) {}
+    };
+
+    ParsedCommand parse(const QString& input)
+    {
+        ParsedCommand result;
+
+        QString data = input.trimmed();
+        if (data.isEmpty())
+        {
+            result.error = "Empty message";
+            return result;
+        }
+
+        QStringList parts = data.split("||");
+        if (parts.isEmpty())
+        {
+            result.error = "No data";
+            return result;
+        }
+
+        QString cmdStr = parts[0].toLower();
+        result.command = stringToCommand(cmdStr);
+
+        if (result.command == CMD_UNKNOWN)
+        {
+            result.error = "Unknown command: " + cmdStr;
+            return result;
+        }
+
+        for (int i = 1; i < parts.size(); i++)
+        {
+            result.params.append(parts[i]);
+        }
+
+        if (!validateParams(result))
+        {
+            return result;
+        }
+
+        result.is_valid = true;
+        return result;
+    }
+
+    QString getHelp()
+    {
+        return "Available commands:\n"
+               "  register||login||password  - register new user\n"
+               "  login||login||password     - login\n"
+               "  auth||login||password      - authenticate\n"
+               "  help                       - show this help\n";
+    }
+
+private:
+    bool validateParams(ParsedCommand& result)
+    {
+        switch (result.command)
+        {
+        case CMD_REGISTER:
+        {
+            if (result.params.size() != 2)
+            {
+                result.error = "Registration needs 2 params: login and password";
+                return false;
+            }
+            if (result.params[0].length() < 3)
+            {
+                result.error = "Login too short (min 3 characters)";
+                return false;
+            }
+            if (result.params[1].length() < 4)
+            {
+                result.error = "Password too short (min 4 characters)";
+                return false;
+            }
+        }
+        break;
+
+        case CMD_LOGIN:
+        case CMD_AUTH:
+        {
+            if (result.params.size() < 2)
+            {
+                result.error = "Login/auth needs: login and password";
+                return false;
+            }
+            if (result.params[0].isEmpty())
+            {
+                result.error = "Login cannot be empty";
+                return false;
+            }
+            if (result.params[1].isEmpty())
+            {
+                result.error = "Password cannot be empty";
+                return false;
+            }
+        }
+        break;
+
+        case CMD_HELP:
+            break;
+
+        case CMD_UNKNOWN:
+            result.error = "Unknown command";
+            return false;
+        }
+        return true;
+    }
+};
+
+#endif // MESSAGE_PARSER_H
