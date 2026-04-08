@@ -5,16 +5,20 @@
 
 MyTcpServer::~MyTcpServer()
 {
-
+    // delete db;
 }
 
 MyTcpServer::MyTcpServer(QObject *parent) : QObject(parent)
 {
+    // db = new PostGreDB(); // вспомнить потом
+    // db->connect();
+
     pTcpServer = new QTcpServer(this);
+    port = 54678;
 
     connect(pTcpServer, &QTcpServer::newConnection, this, &MyTcpServer::slotNewConnection);
 
-    if (!pTcpServer->listen(QHostAddress::Any, 54678))
+    if (!pTcpServer->listen(QHostAddress::Any, port))
     {
         qDebug() << "server is not started";
     }
@@ -22,6 +26,7 @@ MyTcpServer::MyTcpServer(QObject *parent) : QObject(parent)
     {
         qDebug() << "server is started";
     }
+
 }
 
 void  MyTcpServer::slotClientDisconnected()

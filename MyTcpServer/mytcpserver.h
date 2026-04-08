@@ -4,6 +4,8 @@
 #include <QObject>
 #include <QTcpServer>
 #include <QTcpSocket>
+#include <dbinterface.h>
+#include <postgre_db.h>
 
 class MyTcpServer : public QObject
 {
@@ -18,6 +20,7 @@ public slots:
 private:
     QTcpServer * pTcpServer;
     QTcpSocket * pTcpSocket;
+    dbInterface * db;
     //  еще поле
 };
 
