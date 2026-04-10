@@ -5,14 +5,19 @@
 
 MyTcpServer::~MyTcpServer()
 {
-    // delete db;
+    if (db) {
+        db->disconnect();
+        delete db;
+        db = nullptr;
+    }
 }
 
 MyTcpServer::MyTcpServer(QObject *parent) : QObject(parent)
 {
-    // db = new PostGreDB(); // вспомнить потом
-    // db->connect();
     db = nullptr;
+    if (!db) {
+        qWarning() << "DB connection is not available, auth operations will fail";
+    }
 
     pTcpServer = new QTcpServer(this);
     port = 54678;
@@ -32,20 +37,27 @@ MyTcpServer::MyTcpServer(QObject *parent) : QObject(parent)
 
 void  MyTcpServer::slotClientDisconnected()
 {
-    if (pTcpSocket)
+    QTcpSocket *socket = qobject_cast<QTcpSocket*>(sender());
+    if (socket)
     {
-    pTcpSocket->close();
-    pTcpSocket=nullptr;
+        socketBuffers.remove(socket);
+        socket->close();
+        socket->deleteLater();
     }
 }
 
 void MyTcpServer::slotServerRead()
 {
-    static QString res = "";
+    QTcpSocket *socket = qobject_cast<QTcpSocket*>(sender());
+    if (!socket) {
+        return;
+    }
 
-    while(pTcpSocket->bytesAvailable() > 0)
+    QString &res = socketBuffers[socket];
+
+    while(socket->bytesAvailable() > 0)
     {
-        QByteArray array = pTcpSocket->readAll();
+        QByteArray array = socket->readAll();
         qDebug() << "Received:" << array;
 
         res.append(QString::fromUtf8(array));
@@ -63,55 +75,70 @@ void MyTcpServer::slotServerRead()
 
     if (!cmd.is_valid)
     {
-        pTcpSocket->write(("ERROR: " + cmd.error + "\n").toUtf8());
+        socket->write(("ERROR: " + cmd.error + "\n").toUtf8());
         return;
     }
 
     switch(cmd.command)
     {
     case CommandParser::CMD_REGISTER:
-        if (cmd.params.size() >= 2 && db && db->regUser(cmd.params[0], cmd.params[1]))
+        if (cmd.params.size() == 3 && db && db->regUser(cmd.params[0], cmd.params[1], cmd.params[2]))
         {
-            pTcpSocket->write("SUCCESS: User registered\n");
+            socket->write("SUCCESS: User registered\n");
             res.clear();
         }
         else
         {
-            pTcpSocket->write("ERROR: Registration failed\n");
+            socket->write("ERROR: Registration failed\n");
         }
         break;
 
     case CommandParser::CMD_LOGIN:
     case CommandParser::CMD_AUTH:
-        if (cmd.params.size() >= 2 && db && db->authUser(cmd.params[0], cmd.params[1]))
+        if (cmd.params.size() == 2 && db && db->authUser(cmd.params[0], cmd.params[1]))
         {
-            pTcpSocket->write("SUCCESS: Login successful\n");
+            socket->write("SUCCESS: Login successful\n");
             res.clear();
         }
         else
         {
-            pTcpSocket->write("ERROR: Invalid credentials\n");
+            socket->write("ERROR: Invalid credentials\n");
+        }
+        break;
+
+    case CommandParser::CMD_FORGOT_PASSWORD:
+        if (cmd.params.size() == 2 && db && db->resetPasswordByEmail(cmd.params[0], cmd.params[1]))
+        {
+            socket->write("SUCCESS: Password reset by email\n");
+            res.clear();
+        }
+        else
+        {
+            socket->write("ERROR: Password reset failed\n");
         }
         break;
 
     case CommandParser::CMD_HELP:
-        pTcpSocket->write(parser.getHelp().toUtf8());
+        socket->write(parser.getHelp().toUtf8());
         res.clear();
         break;
 
     default:
-        pTcpSocket->write("ERROR: Unknown command\n");
+        socket->write("ERROR: Unknown command\n");
         break;
     }
 }
 
 void MyTcpServer::slotNewConnection(){
-    //   if(server_status==1)
-    pTcpSocket = pTcpServer->nextPendingConnection();
-    pTcpSocket->write("I am echo server!\r\n");
+    QTcpSocket *socket = pTcpServer->nextPendingConnection();
+    if (!socket) {
+        return;
+    }
+    socketBuffers.insert(socket, "");
+    socket->write("I am auth server!\r\n");
 
-    connect(pTcpSocket,&QTcpSocket::readyRead,this, &MyTcpServer::slotServerRead);
-    connect(pTcpSocket,&QTcpSocket::disconnected,this,&MyTcpServer::slotClientDisconnected);
+    connect(socket,&QTcpSocket::readyRead,this, &MyTcpServer::slotServerRead);
+    connect(socket,&QTcpSocket::disconnected,this,&MyTcpServer::slotClientDisconnected);
 
     qDebug() << "New client connected";
 }

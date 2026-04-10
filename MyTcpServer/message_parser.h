@@ -14,6 +14,7 @@ public:
         CMD_REGISTER,
         CMD_LOGIN,
         CMD_AUTH,
+        CMD_FORGOT_PASSWORD,
         CMD_HELP,
     };
 
@@ -21,6 +22,7 @@ public:
         if (cmd == "register" || cmd == "reg") return CMD_REGISTER;
         if (cmd == "login") return CMD_LOGIN;
         if (cmd == "auth") return CMD_AUTH;
+        if (cmd == "forgot" || cmd == "forgot_password") return CMD_FORGOT_PASSWORD;
         if (cmd == "help" || cmd == "?") return CMD_HELP;
         return CMD_UNKNOWN;
     }
@@ -31,6 +33,7 @@ public:
         case CMD_REGISTER: return "REGISTER";
         case CMD_LOGIN:    return "LOGIN";
         case CMD_AUTH:     return "AUTH";
+        case CMD_FORGOT_PASSWORD:return "FORGOT_PASSWORD";
         case CMD_HELP:     return "HELP";
         default:           return "UNKNOWN";
         }
@@ -91,9 +94,10 @@ public:
     QString getHelp()
     {
         return "Available commands:\n"
-               "  register||login||password  - register new user\n"
+               "  register||login||password||email - register new user\n"
                "  login||login||password     - login\n"
                "  auth||login||password      - authenticate\n"
+               "  forgot||email||newpassword - reset password by email\n"
                "  help                       - show this help\n";
     }
 
@@ -104,9 +108,9 @@ private:
         {
         case CMD_REGISTER:
         {
-            if (result.params.size() != 2)
+            if (result.params.size() != 3)
             {
-                result.error = "Registration needs 2 params: login and password";
+                result.error = "Registration needs 3 params: login, password, email";
                 return false;
             }
             if (result.params[0].length() < 3)
@@ -119,13 +123,18 @@ private:
                 result.error = "Password too short (min 4 characters)";
                 return false;
             }
+            if (!result.params[2].contains("@"))
+            {
+                result.error = "Invalid email";
+                return false;
+            }
         }
         break;
 
         case CMD_LOGIN:
         case CMD_AUTH:
         {
-            if (result.params.size() < 2)
+            if (result.params.size() != 2)
             {
                 result.error = "Login/auth needs: login and password";
                 return false;
@@ -138,6 +147,26 @@ private:
             if (result.params[1].isEmpty())
             {
                 result.error = "Password cannot be empty";
+                return false;
+            }
+        }
+        break;
+
+        case CMD_FORGOT_PASSWORD:
+        {
+            if (result.params.size() != 2)
+            {
+                result.error = "Forgot password needs 2 params: email and new password";
+                return false;
+            }
+            if (!result.params[0].contains("@"))
+            {
+                result.error = "Valid email is required";
+                return false;
+            }
+            if (result.params[1].length() < 4)
+            {
+                result.error = "New password too short (min 4 characters)";
                 return false;
             }
         }
