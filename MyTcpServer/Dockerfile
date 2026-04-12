@@ -9,6 +9,8 @@ RUN apt-get update && apt-get install -y \
     libsqlite3-dev \
     libqt6core6 \
     libqt6network6 \
+    libpq-dev \
+    libpq5 \ 
     nano \
     && rm -rf /var/lib/apt/lists/*
 

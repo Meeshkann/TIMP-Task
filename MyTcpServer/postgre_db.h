@@ -3,6 +3,8 @@
 
 
 #include "dbinterface.h"
+#include <QHash>
+#include <QString>
 
 class PostGreDB : public dbInterface
 {
@@ -12,8 +14,10 @@ public:
 
     bool connect() override;
     void disconnect() override;
-    bool regUser(const QString& login, const QString& password) override;
+    bool regUser(const QString& login, const QString& password, const QString& email) override;
     bool authUser(const QString& login, const QString& password) override;
+    bool resetPasswordByEmail(const QString& email, const QString& newPassword) override;
+    bool existsEmail(const QString& email) override;
     bool existsUser(const QString& login) override;
     bool deleteUser(const QString& login) override;
 
@@ -22,7 +26,9 @@ private:
 
     // вспомогательные методы
     bool createTable();
-    QString hashPassword(const QString& password);
+    QString hashPassword(const QString& password) {
+        return "";
+    };
 };
 
 

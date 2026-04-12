@@ -1,9 +1,12 @@
 QT -= GUID
+<<<<<<< HEAD
 QT += network
 
 
 
-
+=======
+QT += network sql
+>>>>>>> f5d40361cc38f069c25d8e679833e1d5cb138d49
 
 CONFIG += c++11 console
 CONFIG -= app_bundle

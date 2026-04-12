@@ -14,8 +14,10 @@ public:
     virtual bool connect() = 0;
     virtual void disconnect() = 0;
 
-    virtual bool regUser(const QString& login, const QString& password) = 0;
+    virtual bool regUser(const QString& login, const QString& password, const QString& email) = 0;
     virtual bool authUser(const QString& login, const QString& password) = 0;
+    virtual bool resetPasswordByEmail(const QString& email, const QString& newPassword) = 0;
+    virtual bool existsEmail(const QString& email) = 0;
     virtual bool existsUser(const QString& login) = 0;
     virtual bool deleteUser(const QString& login) = 0;
 };
