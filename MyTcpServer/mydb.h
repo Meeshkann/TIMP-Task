@@ -8,6 +8,8 @@
 #include <QSqlRecord>
 #include <QVariant>
 #include <QCryptographicHash>
+#include <QDebug>
+#include <QUuid>
 
 class MyDBHandler : public QObject
 {
@@ -15,7 +17,8 @@ class MyDBHandler : public QObject
 
 public:
     MyDBHandler(QObject *parent = nullptr) : QObject(parent) {
-        db = QSqlDatabase::addDatabase("QSQLITE");
+        connectionName = QUuid::createUuid().toString(QUuid::WithoutBraces);
+        db = QSqlDatabase::addDatabase("QSQLITE", connectionName);
         db.setDatabaseName("Test.db");
         open();
         CreateTable();
@@ -23,6 +26,16 @@ public:
 
     ~MyDBHandler() {
         disconnect();
+        if (!connectionName.isEmpty()) {
+            const QString name = connectionName;
+            connectionName.clear();
+            db = QSqlDatabase();
+            QSqlDatabase::removeDatabase(name);
+        }
+    }
+
+    operator bool() const {
+        return db.isOpen();
     }
 
     bool open() {
@@ -128,6 +141,7 @@ public:
 
 private:
     QSqlDatabase db;
+    QString connectionName;
 
     QString HashPassword(const QString& password) {
         QByteArray hash = QCryptographicHash::hash(password.toUtf8(), QCryptographicHash::Sha256);

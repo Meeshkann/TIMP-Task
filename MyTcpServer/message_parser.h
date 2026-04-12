@@ -42,7 +42,7 @@ public:
     QString cmdSequenceToString(const QString& sequence) {
         QString result;
 
-        for (int i=0; i<sequence.length()-1; i++) {
+        for (int i=0; i<sequence.length()   ; i++) {
 
             QChar c = sequence[i];
 

@@ -16,10 +16,10 @@ MyTcpServer::~MyTcpServer()
 
 MyTcpServer::MyTcpServer(QObject *parent) : QObject(parent)
 {
-    MyDBHandler db;
-    //if (!db) {
-    //   qWarning() << "DB connection is not available, auth operations will fail";
-    //}
+    db = new MyDBHandler(this);
+    if (!db || !(*db)) {
+       qWarning() << "DB connection is not available, auth operations will fail";
+    }
 
     pTcpServer = new QTcpServer(this);
     port = 54678;
@@ -33,6 +33,7 @@ MyTcpServer::MyTcpServer(QObject *parent) : QObject(parent)
     else
     {
         qDebug() << "server is started on port" << port;
+
     }
 
 }
@@ -54,6 +55,7 @@ void MyTcpServer::slotServerRead()
     if (!socket) {
         return;
     }
+
 
     QString &res = socketBuffers[socket];
 
@@ -96,12 +98,12 @@ void MyTcpServer::slotServerRead()
     case CommandParser::CMD_REGISTER:
         if (cmd.params.size() == 3 && db && db->regUser(cmd.params[0], cmd.params[1], cmd.params[2]))
         {
-            socket->write("SUCCESS: User registered\n");
+            socket->write("SUCCESS: User registered\r\n");
             res.clear();
         }
         else
         {
-            socket->write("ERROR: Registration failed\n");
+            socket->write("ERROR: Registration failed\r\n");
         }
         break;
 
@@ -109,24 +111,24 @@ void MyTcpServer::slotServerRead()
     case CommandParser::CMD_AUTH:
         if (cmd.params.size() == 2 && db && db->authUser(cmd.params[0], cmd.params[1]))
         {
-            socket->write("SUCCESS: Login successful\n");
+            socket->write("SUCCESS: Login successful\r\n");
             res.clear();
         }
         else
         {
-            socket->write("ERROR: Invalid credentials\n");
+            socket->write("ERROR: Invalid credentials\r\n");
         }
         break;
 
     case CommandParser::CMD_FORGOT_PASSWORD:
         if (cmd.params.size() == 2 && db && db->resetPasswordByEmail(cmd.params[0], cmd.params[1]))
         {
-            socket->write("SUCCESS: Password reset by email\n");
+            socket->write("SUCCESS: Password reset by email\r\n");
             res.clear();
         }
         else
         {
-            socket->write("ERROR: Password reset failed\n");
+            socket->write("ERROR: Password reset failed\r\n");
         }
         break;
 
@@ -136,7 +138,7 @@ void MyTcpServer::slotServerRead()
         break;
 
     default:
-        socket->write("ERROR: Unknown command\n");
+        socket->write("ERROR: Unknown command\r\n");
         break;
     }
 
