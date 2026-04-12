@@ -39,6 +39,25 @@ public:
         }
     }
 
+    QString cmdSequenceToString(const QString& sequence) {
+        QString result;
+
+        for (int i=0; i<sequence.length(); i++) {
+
+            QChar c = sequence[i];
+
+            if (c == '\b') {
+                if (!result.isEmpty()) {
+                    result.chop(1);
+                }
+            } else {
+                result.append(c);
+            }
+        }
+
+        return result;
+    }
+
     struct ParsedCommand
     {
         Commands command;
@@ -54,7 +73,7 @@ public:
     {
         ParsedCommand result;
 
-        QString data = input.trimmed();
+        QString data = cmdSequenceToString(input).trimmed();
         if (data.isEmpty())
         {
             result.error = "Empty message";
@@ -93,12 +112,12 @@ public:
 
     QString getHelp()
     {
-        return "Available commands:\n"
-               "  register||login||password||email - register new user\n"
-               "  login||login||password     - login\n"
-               "  auth||login||password      - authenticate\n"
-               "  forgot||email||newpassword - reset password by email\n"
-               "  help                       - show this help\n";
+        return "Available commands:\r\n"
+               "  register||login||password||email - register new user\r\n"
+               "  login||login||password     - login\r\n"
+               "  auth||login||password      - authenticate\r\n"
+               "  forgot||email||newpassword - reset password by email\r\n"
+               "  help                       - show this help\r\n";
     }
 
 private:
