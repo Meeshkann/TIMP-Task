@@ -19,7 +19,6 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 
 
 HEADERS += \
-    dbinterface.h \
     message_parser.h \
-    mytcpserver.h \
-    postgre_db.h
+    mydb.h \
+    mytcpserver.h

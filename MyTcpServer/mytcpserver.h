@@ -5,8 +5,7 @@
 #include <QTcpServer>
 #include <QTcpSocket>
 #include <QHash>
-#include <dbinterface.h>
-#include <postgre_db.h>
+#include <mydb.h>
 #include <message_parser.h>
 
 class MyTcpServer : public QObject
@@ -22,9 +21,8 @@ public slots:
 private:
     QTcpServer * pTcpServer;
     QTcpSocket * pTcpSocket;
-    dbInterface * db;
     QHash<QTcpSocket*, QString> socketBuffers;
-
+    MyDBHandler * db;
     quint16 port;
 };
 

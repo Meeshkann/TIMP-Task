@@ -1,7 +1,9 @@
 #include <QDebug>
-#include "mytcpserver.h"
 #include <QCoreApplication>
 #include <QString>
+
+#include "mytcpserver.h"
+#include "mydb.h"
 
 MyTcpServer::~MyTcpServer()
 {
@@ -14,10 +16,10 @@ MyTcpServer::~MyTcpServer()
 
 MyTcpServer::MyTcpServer(QObject *parent) : QObject(parent)
 {
-    db = nullptr;
-    if (!db) {
-        qWarning() << "DB connection is not available, auth operations will fail";
-    }
+    MyDBHandler db;
+    //if (!db) {
+    //   qWarning() << "DB connection is not available, auth operations will fail";
+    //}
 
     pTcpServer = new QTcpServer(this);
     port = 54678;
