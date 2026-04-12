@@ -25,7 +25,7 @@ MyTcpServer::MyTcpServer(QObject *parent) : QObject(parent)
     }
     else
     {
-        qDebug() << "server is started";
+        qDebug() << "server is started at port" << port;
     }
 
 }
@@ -50,6 +50,10 @@ void MyTcpServer::slotServerRead()
 
         res.append(QString::fromUtf8(array));
     }
+
+    if (res.isEmpty()) return;
+
+
 
     qDebug() << "Full buffer:" << res;
 
