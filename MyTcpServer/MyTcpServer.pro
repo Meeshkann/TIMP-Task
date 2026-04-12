@@ -20,5 +20,6 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 
 HEADERS += \
     message_parser.h \
+    myFunction.h \
     mydb.h \
     mytcpserver.h
