@@ -30,7 +30,7 @@ MyTcpServer::MyTcpServer(QObject *parent) : QObject(parent)
     }
     else
     {
-        qDebug() << "server is started";
+        qDebug() << "server is started on port" << port;
     }
 
 }
@@ -63,6 +63,12 @@ void MyTcpServer::slotServerRead()
         res.append(QString::fromUtf8(array));
     }
 
+    if (res.isEmpty()) return;
+
+    if (res[res.size() - 1] != '\n') {
+        return;
+    }
+
     qDebug() << "Full buffer:" << res;
 
     CommandParser parser;
@@ -73,11 +79,15 @@ void MyTcpServer::slotServerRead()
              << "error:" << cmd.error
              << "params:" << cmd.params;
 
+    res = "";
+
     if (!cmd.is_valid)
     {
-        socket->write(("ERROR: " + cmd.error + "\n").toUtf8());
+        socket->write(("ERROR: " + cmd.error + "\r\n").toUtf8());
         return;
     }
+
+
 
     switch(cmd.command)
     {
@@ -127,6 +137,9 @@ void MyTcpServer::slotServerRead()
         socket->write("ERROR: Unknown command\n");
         break;
     }
+
+
+
 }
 
 void MyTcpServer::slotNewConnection(){
