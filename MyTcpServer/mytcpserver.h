@@ -4,7 +4,6 @@
 #include <QObject>
 #include <QTcpServer>
 #include <QTcpSocket>
-#include <QHash>
 #include <dbinterface.h>
 #include <postgre_db.h>
 #include <message_parser.h>
@@ -23,9 +22,9 @@ private:
     QTcpServer * pTcpServer;
     QTcpSocket * pTcpSocket;
     dbInterface * db;
-    QHash<QTcpSocket*, QString> socketBuffers;
 
     quint16 port;
+    //  еще поле
 };
 
 #endif // MYTCPSERVER_H
