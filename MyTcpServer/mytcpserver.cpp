@@ -177,6 +177,7 @@ void MyTcpServer::slotServerRead()
         if (cmd.params.size() == 3 && db && db->regUser(cmd.params[0], cmd.params[1], cmd.params[2]))
         {
             socket->write("SUCCESS: User registered\r\n");
+            qDebug() << "user registrated";
             res.clear();
         }
         else
@@ -190,6 +191,7 @@ void MyTcpServer::slotServerRead()
         if (cmd.params.size() == 2 && db && db->authUser(cmd.params[0], cmd.params[1]))
         {
             socket->write("SUCCESS: Login successful\r\n");
+            qDebug() << "user logged";
             res.clear();
         }
         else
