@@ -7,6 +7,8 @@
 
 MyTcpServer::~MyTcpServer()
 {
+
+    stop();
     if (db) {
         db->disconnect();
         delete db;
@@ -14,7 +16,18 @@ MyTcpServer::~MyTcpServer()
     }
 }
 
+MyTcpServer& MyTcpServer::getInstance()
+{
+    static MyTcpServer instance;
+    return instance;
+}
+
 MyTcpServer::MyTcpServer(QObject *parent) : QObject(parent)
+    , pTcpServer(nullptr)
+    , pTcpSocket(nullptr)
+    , db(nullptr)
+    , port(0)
+    , isRunFlag(false)
 {
     db = new MyDBHandler(this);
     if (!db || !(*db)) {
@@ -22,21 +35,77 @@ MyTcpServer::MyTcpServer(QObject *parent) : QObject(parent)
     }
 
     pTcpServer = new QTcpServer(this);
-    port = 54678;
 
     connect(pTcpServer, &QTcpServer::newConnection, this, &MyTcpServer::slotNewConnection);
-
-    if (!pTcpServer->listen(QHostAddress::Any, port))
-    {
-        qDebug() << "server is not started";
-    }
-    else
-    {
-        qDebug() << "server is started on port" << port;
-
-    }
-
 }
+
+bool MyTcpServer::start(quint16 port)
+{
+    if (isRunFlag) {
+        qDebug() << "Server already running on port" << this->port;
+        return true;
+    }
+
+    this->port = port;
+
+    if (!pTcpServer->listen(QHostAddress::Any, port)) {
+        qDebug() << "Failed to start server on port" << port
+                 << "Error:" << pTcpServer->errorString();
+        return false;
+    }
+
+    isRunFlag = true;
+    qDebug() << "Server started successfully on port" << port;
+    return true;
+}
+
+void MyTcpServer::stop()
+{
+    if (!isRunFlag) return;
+
+    // закрываем все клиентские соединения
+    for (QTcpSocket* socket : socketBuffers.keys()) {
+        socket->close();
+        socket->deleteLater();
+    }
+    socketBuffers.clear();
+
+    // закрытие сервера
+    if (pTcpServer) {
+        pTcpServer->close();
+    }
+
+    isRunFlag = false;
+    qDebug() << "Server stopped";
+}
+
+
+bool MyTcpServer::isRunning() const
+{
+    return isRunFlag && pTcpServer && pTcpServer->isListening();
+}
+
+quint16 MyTcpServer::getPort() const
+{
+    return port;
+}
+
+// ================= слоты
+
+void MyTcpServer::slotNewConnection(){
+    QTcpSocket *socket = pTcpServer->nextPendingConnection();
+    if (!socket) {
+        return;
+    }
+    socketBuffers.insert(socket, "");
+    socket->write("I am your server! Please login!!!\r\n");
+
+    connect(socket,&QTcpSocket::readyRead,this, &MyTcpServer::slotServerRead);
+    connect(socket,&QTcpSocket::disconnected,this,&MyTcpServer::slotClientDisconnected);
+
+    qDebug() << "New client connected"; // можно добавить информацию о клиенте
+}
+
 
 void  MyTcpServer::slotClientDisconnected()
 {
@@ -46,6 +115,7 @@ void  MyTcpServer::slotClientDisconnected()
         socketBuffers.remove(socket);
         socket->close();
         socket->deleteLater();
+        qDebug() << "Client disconnected";
     }
 }
 
@@ -58,6 +128,14 @@ void MyTcpServer::slotServerRead()
 
 
     QString &res = socketBuffers[socket];
+
+    if(res.size()> 65536)
+    {
+        socket->write("Error: message to long");
+        res.clear();
+        return;
+    }
+
 
     while(socket->bytesAvailable() > 0)
     {
@@ -145,23 +223,6 @@ void MyTcpServer::slotServerRead()
 
 
 }
-
-void MyTcpServer::slotNewConnection(){
-    QTcpSocket *socket = pTcpServer->nextPendingConnection();
-    if (!socket) {
-        return;
-    }
-    socketBuffers.insert(socket, "");
-    socket->write("I am auth server!\r\n");
-
-    connect(socket,&QTcpSocket::readyRead,this, &MyTcpServer::slotServerRead);
-    connect(socket,&QTcpSocket::disconnected,this,&MyTcpServer::slotClientDisconnected);
-
-    qDebug() << "New client connected";
-}
-
-
-
 
 
 

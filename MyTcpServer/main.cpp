@@ -6,7 +6,17 @@ int main(int argc, char *argv[])
 
     QCoreApplication a(argc, argv);
 
-    MyTcpServer myserv;
+    MyTcpServer& myserv = MyTcpServer::getInstance();
+
+    if (myserv.start(54678))
+    {
+        qDebug() << "Server is running on port " << myserv.getPort();
+    }
+    else
+    {
+        qDebug() << "Failed to start a server";
+        return 1;
+    }
 
     return a.exec();
 }

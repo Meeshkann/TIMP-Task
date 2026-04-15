@@ -1,6 +1,8 @@
 #ifndef FUNC_HANDLER_H
 #define FUNC_HANDLER_H
 
+#include <cmath>
+
 class myFunc {
 public:
     myFunc();
