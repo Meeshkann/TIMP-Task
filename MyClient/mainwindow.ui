@@ -67,16 +67,16 @@
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>0</y>
-      <width>561</width>
-      <height>241</height>
+      <y>30</y>
+      <width>521</width>
+      <height>211</height>
      </rect>
     </property>
     <property name="text">
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap resource="Images.qrc">:/image/функция.png</pixmap>
+     <pixmap resource="Images.qrc">:/image/func.png</pixmap>
     </property>
    </widget>
    <widget class="QLabel" name="label_2">
@@ -113,6 +113,19 @@
       <width>211</width>
       <height>291</height>
      </rect>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="logoutBtn">
+    <property name="geometry">
+     <rect>
+      <x>1140</x>
+      <y>650</y>
+      <width>80</width>
+      <height>24</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Выйти</string>
     </property>
    </widget>
   </widget>

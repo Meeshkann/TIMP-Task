@@ -1,173 +1,90 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>Dialog</class>
- <widget class="QDialog" name="Dialog">
+ <class>LoginDialog</class>
+ <widget class="QDialog" name="LoginDialog">
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>471</width>
-    <height>350</height>
+    <width>400</width>
+    <height>300</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Dialog</string>
+   <string>Авторизация</string>
   </property>
-  <widget class="QDialogButtonBox" name="buttonBox">
+  
+  <widget class="QLineEdit" name="loginEdit">
    <property name="geometry">
     <rect>
-     <x>90</x>
-     <y>290</y>
-     <width>341</width>
-     <height>32</height>
-    </rect>
-   </property>
-   <property name="orientation">
-    <enum>Qt::Orientation::Horizontal</enum>
-   </property>
-   <property name="standardButtons">
-    <set>QDialogButtonBox::StandardButton::Cancel|QDialogButtonBox::StandardButton::Ok</set>
-   </property>
-  </widget>
-  <widget class="QLineEdit" name="lineEdit">
-   <property name="geometry">
-    <rect>
-     <x>40</x>
+     <x>100</x>
      <y>80</y>
-     <width>113</width>
-     <height>24</height>
+     <width>200</width>
+     <height>25</height>
     </rect>
    </property>
-  </widget>
-  <widget class="QLineEdit" name="lineEdit_2">
-   <property name="geometry">
-    <rect>
-     <x>220</x>
-     <y>80</y>
-     <width>113</width>
-     <height>24</height>
-    </rect>
-   </property>
-  </widget>
-  <widget class="QLineEdit" name="lineEdit_3">
-   <property name="geometry">
-    <rect>
-     <x>40</x>
-     <y>160</y>
-     <width>151</width>
-     <height>24</height>
-    </rect>
-   </property>
-  </widget>
-  <widget class="QLineEdit" name="lineEdit_4">
-   <property name="geometry">
-    <rect>
-     <x>40</x>
-     <y>230</y>
-     <width>151</width>
-     <height>24</height>
-    </rect>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label">
-   <property name="geometry">
-    <rect>
-     <x>40</x>
-     <y>50</y>
-     <width>49</width>
-     <height>16</height>
-    </rect>
-   </property>
-   <property name="text">
+   <property name="placeholderText">
     <string>Логин</string>
    </property>
   </widget>
-  <widget class="QLabel" name="label_2">
+  
+  <widget class="QLineEdit" name="passwordEdit">
    <property name="geometry">
     <rect>
-     <x>220</x>
-     <y>50</y>
-     <width>49</width>
-     <height>16</height>
+     <x>100</x>
+     <y>120</y>
+     <width>200</width>
+     <height>25</height>
     </rect>
    </property>
-   <property name="text">
+   <property name="echoMode">
+    <enum>QLineEdit::Password</enum>
+   </property>
+   <property name="placeholderText">
     <string>Пароль</string>
    </property>
   </widget>
-  <widget class="QLabel" name="label_3">
+  
+  <widget class="QPushButton" name="loginButton">
    <property name="geometry">
     <rect>
-     <x>40</x>
-     <y>130</y>
-     <width>49</width>
-     <height>16</height>
+     <x>100</x>
+     <y>170</y>
+     <width>90</width>
+     <height>30</height>
     </rect>
    </property>
    <property name="text">
-    <string>Ip</string>
+    <string>Войти</string>
    </property>
   </widget>
-  <widget class="QLabel" name="label_4">
+  
+  <widget class="QPushButton" name="registerButton">
    <property name="geometry">
     <rect>
-     <x>40</x>
-     <y>200</y>
-     <width>49</width>
-     <height>16</height>
+     <x>210</x>
+     <y>170</y>
+     <width>90</width>
+     <height>30</height>
     </rect>
    </property>
    <property name="text">
-    <string>Порт</string>
+    <string>Регистрация</string>
    </property>
   </widget>
-  <widget class="QLabel" name="label_5">
+  
+  <widget class="QLabel" name="statusLabel">
    <property name="geometry">
     <rect>
-     <x>40</x>
-     <y>20</y>
-     <width>49</width>
-     <height>16</height>
+     <x>100</x>
+     <y>220</y>
+     <width>200</width>
+     <height>20</height>
     </rect>
    </property>
    <property name="text">
-    <string>Вход</string>
+    <string/>
    </property>
   </widget>
  </widget>
- <resources/>
- <connections>
-  <connection>
-   <sender>buttonBox</sender>
-   <signal>accepted()</signal>
-   <receiver>Dialog</receiver>
-   <slot>accept()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>248</x>
-     <y>254</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>157</x>
-     <y>274</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>buttonBox</sender>
-   <signal>rejected()</signal>
-   <receiver>Dialog</receiver>
-   <slot>reject()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>316</x>
-     <y>260</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>286</x>
-     <y>274</y>
-    </hint>
-   </hints>
-  </connection>
- </connections>
 </ui>

@@ -16,14 +16,28 @@ class MainWindow : public QMainWindow
 
 public:
     explicit MainWindow(QWidget *parent = nullptr);
-    ~MainWindow() override;
+    ~MainWindow();
+
+    QString sendCommand(const QString& command);
+
+private slots:
+    void onParameter1Changed(int value);
+    void onParameter2Changed(int value);
+    void onParameter3Changed(int value);
+    void onLogout();
 
 private:
     Ui::MainWindow *ui;
     QTcpSocket *socket;
+    QString currentUser;
+    bool isAuthenticated;
 
-    QString sendCommand(const QString& command);
-    void setupAuthUi();
+    void showLoginDialog();
+    void showRegisterDialog();
+    void setupFunctionUi();
+    void connectToServer();
+    void updateGraph();
+    void updateTable(const QString &data);
 };
 
 #endif // MAINWINDOW_H
