@@ -169,8 +169,6 @@ void MyTcpServer::slotServerRead()
         return;
     }
 
-
-
     switch(cmd.command)
     {
     case CommandParser::CMD_REGISTER:
@@ -217,13 +215,13 @@ void MyTcpServer::slotServerRead()
         res.clear();
         break;
 
+    case CommandParser::CMD_CALCULATE:
+        break;
+
     default:
         socket->write("ERROR: Unknown command\r\n");
         break;
     }
-
-
-
 }
 
 

@@ -7,7 +7,7 @@ class myFunc {
 public:
     myFunc();
     ~myFunc();
-    float solve(float x) {
+    float solve(int x, int b, int c) {
         if (x<0) {
             return std::abs(x);
         }

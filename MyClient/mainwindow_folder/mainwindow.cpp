@@ -104,16 +104,19 @@ void MainWindow::connectToServer()
 void MainWindow::onParameter1Changed(int value)
 {
     updateGraph();
+    ui->a_argument_label->setText(QString::number(value));
 }
 
 void MainWindow::onParameter2Changed(int value)
 {
     updateGraph();
+    ui->b_argument_label->setText(QString::number(value));
 }
 
 void MainWindow::onParameter3Changed(int value)
 {
     updateGraph();
+    ui->c_argument_label->setText(QString::number(value));
 }
 
 void MainWindow::updateGraph()
