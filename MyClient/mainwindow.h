@@ -3,6 +3,8 @@
 
 #include <QMainWindow>
 #include <QTcpSocket>
+#include <QGraphicsScene>      // добавляем
+#include <QGraphicsView>       // добавляем
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -38,6 +40,7 @@ private:
     void connectToServer();
     void updateGraph();
     void updateTable(const QString &data);
+    void drawGraph(const QString &data);   // новый метод
 };
 
 #endif // MAINWINDOW_H

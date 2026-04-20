@@ -199,12 +199,14 @@ private:
         case CMD_HELP:
             break;
 
+
         case CMD_CALCULATE:
             if (result.params.size() != 3)
             {
                 result.error = "Calculate function requires exactly 3 function arguments";
                 return false;
             };
+        break;
 
         case CMD_UNKNOWN:
             result.error = "Unknown command";

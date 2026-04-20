@@ -1,0 +1,3301 @@
+Folder Structure
+--------------------------------------------------
+TIMP-Task/
+    .gitignore
+    README.md
+    .qtcreator/
+        project.json
+        project.json.user
+    MyClient/
+        .gitignore
+        Images.qrc
+        logindialog.cpp
+        logindialog.h
+        logindialog.ui
+        main.cpp
+        mainwindow.cpp
+        mainwindow.h
+        mainwindow.ui
+        MyClient.pro
+        MyClient.pro.user
+        regdialog.cpp
+        regdialog.h
+        regdialog.ui
+        image/
+            cat.png
+            func.png
+    MyTcpServer/
+        .dockerignore
+        .gitignore
+        Dockerfile
+        main.cpp
+        message_parser.h
+        mydb.h
+        myFunction.h
+        mytcpserver.cpp
+        mytcpserver.h
+        MyTcpServer.pro
+        MyTcpServer.pro.user
+        readme_docker.txt
+        .qtcreator/
+            project.json
+            project.json.user
+
+
+File Contents
+--------------------------------------------------
+
+
+.gitignore
+File type: no extension
+# This file is used to ignore files which are generated
+# ----------------------------------------------------------------------------
+
+*~
+*.autosave
+*.a
+*.core
+*.moc
+*.o
+*.obj
+*.orig
+*.rej
+*.so
+*.so.*
+*_pch.h.cpp
+*_resource.rc
+*.qm
+.#*
+*.*#
+core
+!core/
+tags
+.DS_Store
+.directory
+*.debug
+Makefile*
+*.prl
+*.app
+moc_*.cpp
+ui_*.h
+qrc_*.cpp
+Thumbs.db
+*.res
+*.rc
+/.qmake.cache
+/.qmake.stash
+.qtcreator
+
+
+# qtcreator generated files
+*.pro.user*
+*.qbs.user*
+CMakeLists.txt.user*
+
+# xemacs temporary files
+*.flc
+
+# Vim temporary files
+.*.swp
+
+# Visual Studio generated files
+*.ib_pdb_index
+*.idb
+*.ilk
+*.pdb
+*.sln
+*.suo
+*.vcproj
+*vcproj.*.*.user
+*.ncb
+*.sdf
+*.opensdf
+*.vcxproj
+*vcxproj.*
+
+# MinGW generated files
+*.Debug
+*.Release
+
+# Python byte code
+*.pyc
+
+# Binaries
+# --------
+*.dll
+*.exe
+
+# Directories with generated files
+.moc/
+.obj/
+.pch/
+.rcc/
+.uic/
+/build*/
+
+
+--------------------------------------------------
+File End
+--------------------------------------------------
+
+
+README.md
+File type: .md
+Технологии и методы программирования.
+Группа 251-371, подгруппа №9
+
+
+--------------------------------------------------
+File End
+--------------------------------------------------
+
+
+.qtcreator\project.json
+File type: .json
+{
+    "$schema": "https://download.qt.io/official_releases/qtcreator/latest/installer_source/jsonschemas/project.json",
+    "files.exclude": [
+        ".qtcreator/project.json.user"
+    ]
+}
+
+
+--------------------------------------------------
+File End
+--------------------------------------------------
+
+
+.qtcreator\project.json.user
+File type: .user
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE QtCreatorProject>
+<!-- Written by QtCreator 14.0.1, 2026-04-20T20:27:03. -->
+<qtcreator>
+ <data>
+  <variable>EnvironmentId</variable>
+  <value type="QByteArray">{07a7221a-c1c0-4e3b-a9cf-83f63194f3e1}</value>
+ </data>
+ <data>
+  <variable>ProjectExplorer.Project.ActiveTarget</variable>
+  <value type="qlonglong">0</value>
+ </data>
+ <data>
+  <variable>ProjectExplorer.Project.EditorSettings</variable>
+  <valuemap type="QVariantMap">
+   <value type="bool" key="EditorConfiguration.AutoIndent">true</value>
+   <value type="bool" key="EditorConfiguration.AutoSpacesForTabs">false</value>
+   <value type="bool" key="EditorConfiguration.CamelCaseNavigation">true</value>
+   <valuemap type="QVariantMap" key="EditorConfiguration.CodeStyle.0">
+    <value type="QString" key="language">Cpp</value>
+    <valuemap type="QVariantMap" key="value">
+     <value type="QByteArray" key="CurrentPreferences">CppGlobal</value>
+    </valuemap>
+   </valuemap>
+   <valuemap type="QVariantMap" key="EditorConfiguration.CodeStyle.1">
+    <value type="QString" key="language">QmlJS</value>
+    <valuemap type="QVariantMap" key="value">
+     <value type="QByteArray" key="CurrentPreferences">QmlJSGlobal</value>
+    </valuemap>
+   </valuemap>
+   <value type="qlonglong" key="EditorConfiguration.CodeStyle.Count">2</value>
+   <value type="QByteArray" key="EditorConfiguration.Codec">UTF-8</value>
+   <value type="bool" key="EditorConfiguration.ConstrainTooltips">false</value>
+   <value type="int" key="EditorConfiguration.IndentSize">4</value>
+   <value type="bool" key="EditorConfiguration.KeyboardTooltips">false</value>
+   <value type="int" key="EditorConfiguration.MarginColumn">80</value>
+   <value type="bool" key="EditorConfiguration.MouseHiding">true</value>
+   <value type="bool" key="EditorConfiguration.MouseNavigation">true</value>
+   <value type="int" key="EditorConfiguration.PaddingMode">1</value>
+   <value type="int" key="EditorConfiguration.PreferAfterWhitespaceComments">0</value>
+   <value type="bool" key="EditorConfiguration.PreferSingleLineComments">false</value>
+   <value type="bool" key="EditorConfiguration.ScrollWheelZooming">true</value>
+   <value type="bool" key="EditorConfiguration.ShowMargin">false</value>
+   <value type="int" key="EditorConfiguration.SmartBackspaceBehavior">2</value>
+   <value type="bool" key="EditorConfiguration.SmartSelectionChanging">true</value>
+   <value type="bool" key="EditorConfiguration.SpacesForTabs">true</value>
+   <value type="int" key="EditorConfiguration.TabKeyBehavior">0</value>
+   <value type="int" key="EditorConfiguration.TabSize">8</value>
+   <value type="bool" key="EditorConfiguration.UseGlobal">true</value>
+   <value type="bool" key="EditorConfiguration.UseIndenter">false</value>
+   <value type="int" key="EditorConfiguration.Utf8BomBehavior">1</value>
+   <value type="bool" key="EditorConfiguration.addFinalNewLine">true</value>
+   <value type="bool" key="EditorConfiguration.cleanIndentation">true</value>
+   <value type="bool" key="EditorConfiguration.cleanWhitespace">true</value>
+   <value type="QString" key="EditorConfiguration.ignoreFileTypes">*.md, *.MD, Makefile</value>
+   <value type="bool" key="EditorConfiguration.inEntireDocument">false</value>
+   <value type="bool" key="EditorConfiguration.skipTrailingWhitespace">true</value>
+   <value type="bool" key="EditorConfiguration.tintMarginArea">true</value>
+  </valuemap>
+ </data>
+ <data>
+  <variable>ProjectExplorer.Project.PluginSettings</variable>
+  <valuemap type="QVariantMap">
+   <valuemap type="QVariantMap" key="AutoTest.ActiveFrameworks">
+    <value type="bool" key="AutoTest.Framework.Boost">true</value>
+    <value type="bool" key="AutoTest.Framework.CTest">false</value>
+    <value type="bool" key="AutoTest.Framework.Catch">true</value>
+    <value type="bool" key="AutoTest.Framework.GTest">true</value>
+    <value type="bool" key="AutoTest.Framework.QtQuickTest">true</value>
+    <value type="bool" key="AutoTest.Framework.QtTest">true</value>
+   </valuemap>
+   <value type="bool" key="AutoTest.ApplyFilter">false</value>
+   <valuemap type="QVariantMap" key="AutoTest.CheckStates"/>
+   <valuelist type="QVariantList" key="AutoTest.PathFilters"/>
+   <value type="int" key="AutoTest.RunAfterBuild">0</value>
+   <value type="bool" key="AutoTest.UseGlobal">true</value>
+   <valuemap type="QVariantMap" key="ClangTools">
+    <value type="bool" key="ClangTools.AnalyzeOpenFiles">true</value>
+    <value type="bool" key="ClangTools.BuildBeforeAnalysis">true</value>
+    <value type="QString" key="ClangTools.DiagnosticConfig">Builtin.DefaultTidyAndClazy</value>
+    <value type="int" key="ClangTools.ParallelJobs">6</value>
+    <value type="bool" key="ClangTools.PreferConfigFile">true</value>
+    <valuelist type="QVariantList" key="ClangTools.SelectedDirs"/>
+    <valuelist type="QVariantList" key="ClangTools.SelectedFiles"/>
+    <valuelist type="QVariantList" key="ClangTools.SuppressedDiagnostics"/>
+    <value type="bool" key="ClangTools.UseGlobalSettings">true</value>
+   </valuemap>
+  </valuemap>
+ </data>
+ <data>
+  <variable>ProjectExplorer.Project.Target.0</variable>
+  <valuemap type="QVariantMap">
+   <value type="QString" key="DeviceType">Desktop</value>
+   <value type="QString" key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName">Desktop Qt  (shared) MinGW-w64 MINGW64 (MSYS2)</value>
+   <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">Desktop Qt  (shared) MinGW-w64 MINGW64 (MSYS2)</value>
+   <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">qt5.shared.M2_MinGW-w64_MINGW64_kit</value>
+   <value type="qlonglong" key="ProjectExplorer.Target.ActiveBuildConfiguration">-1</value>
+   <value type="qlonglong" key="ProjectExplorer.Target.ActiveDeployConfiguration">0</value>
+   <value type="qlonglong" key="ProjectExplorer.Target.ActiveRunConfiguration">0</value>
+   <value type="qlonglong" key="ProjectExplorer.Target.BuildConfigurationCount">0</value>
+   <valuemap type="QVariantMap" key="ProjectExplorer.Target.DeployConfiguration.0">
+    <valuemap type="QVariantMap" key="ProjectExplorer.BuildConfiguration.BuildStepList.0">
+     <value type="qlonglong" key="ProjectExplorer.BuildStepList.StepsCount">0</value>
+     <value type="QString" key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName">Развёртывание</value>
+     <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">Развёртывание</value>
+     <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">ProjectExplorer.BuildSteps.Deploy</value>
+    </valuemap>
+    <value type="int" key="ProjectExplorer.BuildConfiguration.BuildStepListCount">1</value>
+    <valuemap type="QVariantMap" key="ProjectExplorer.DeployConfiguration.CustomData"/>
+    <value type="bool" key="ProjectExplorer.DeployConfiguration.CustomDataEnabled">false</value>
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">ProjectExplorer.DefaultDeployConfiguration</value>
+   </valuemap>
+   <value type="qlonglong" key="ProjectExplorer.Target.DeployConfigurationCount">1</value>
+   <valuemap type="QVariantMap" key="ProjectExplorer.Target.RunConfiguration.0">
+    <value type="bool" key="Analyzer.Perf.Settings.UseGlobalSettings">true</value>
+    <value type="bool" key="Analyzer.QmlProfiler.Settings.UseGlobalSettings">true</value>
+    <value type="int" key="Analyzer.Valgrind.Callgrind.CostFormat">0</value>
+    <value type="bool" key="Analyzer.Valgrind.Settings.UseGlobalSettings">true</value>
+    <valuelist type="QVariantList" key="CustomOutputParsers"/>
+    <value type="int" key="PE.EnvironmentAspect.Base">2</value>
+    <valuelist type="QVariantList" key="PE.EnvironmentAspect.Changes"/>
+    <value type="bool" key="PE.EnvironmentAspect.PrintOnRun">false</value>
+    <value type="QString" key="PerfRecordArgsId">-e cpu-cycles --call-graph &quot;dwarf,4096&quot; -F 250</value>
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName"></value>
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">ProjectExplorer.CustomExecutableRunConfiguration</value>
+    <value type="QString" key="ProjectExplorer.RunConfiguration.BuildKey"></value>
+    <value type="bool" key="ProjectExplorer.RunConfiguration.Customized">false</value>
+    <value type="bool" key="RunConfiguration.UseCppDebuggerAuto">true</value>
+    <value type="bool" key="RunConfiguration.UseQmlDebuggerAuto">true</value>
+   </valuemap>
+   <value type="qlonglong" key="ProjectExplorer.Target.RunConfigurationCount">1</value>
+  </valuemap>
+ </data>
+ <data>
+  <variable>ProjectExplorer.Project.TargetCount</variable>
+  <value type="qlonglong">1</value>
+ </data>
+ <data>
+  <variable>ProjectExplorer.Project.Updater.FileVersion</variable>
+  <value type="int">22</value>
+ </data>
+ <data>
+  <variable>Version</variable>
+  <value type="int">22</value>
+ </data>
+</qtcreator>
+
+
+--------------------------------------------------
+File End
+--------------------------------------------------
+
+
+MyClient\.gitignore
+File type: no extension
+# This file is used to ignore files which are generated
+# ----------------------------------------------------------------------------
+
+*~
+*.autosave
+*.a
+*.core
+*.moc
+*.o
+*.obj
+*.orig
+*.rej
+*.so
+*.so.*
+*_pch.h.cpp
+*_resource.rc
+*.qm
+.#*
+*.*#
+core
+!core/
+tags
+.DS_Store
+.directory
+*.debug
+Makefile*
+*.prl
+*.app
+moc_*.cpp
+ui_*.h
+qrc_*.cpp
+Thumbs.db
+*.res
+*.rc
+/.qmake.cache
+/.qmake.stash
+**/.qmlls.ini
+
+# qtcreator generated files
+*.pro.user*
+*.qbs.user*
+CMakeLists.txt.user*
+
+# xemacs temporary files
+*.flc
+
+# Vim temporary files
+.*.swp
+
+# Visual Studio generated files
+*.ib_pdb_index
+*.idb
+*.ilk
+*.pdb
+*.sln
+*.suo
+*.vcproj
+*vcproj.*.*.user
+*.ncb
+*.sdf
+*.opensdf
+*.vcxproj
+*vcxproj.*
+
+# MinGW generated files
+*.Debug
+*.Release
+
+# Python byte code
+*.pyc
+
+# Binaries
+# --------
+*.dll
+*.exe
+
+# Directories with generated files
+.moc/
+.obj/
+.pch/
+.rcc/
+.uic/
+/build*/
+/.qtcreator/
+
+
+--------------------------------------------------
+File End
+--------------------------------------------------
+
+
+MyClient\Images.qrc
+File type: .qrc
+<RCC>
+    <qresource prefix="/new/prefix1"/>
+    <qresource prefix="/">
+        <file>image/func.png</file>
+        <file>image/cat.png</file>
+    </qresource>
+</RCC>
+
+
+--------------------------------------------------
+File End
+--------------------------------------------------
+
+
+MyClient\logindialog.cpp
+File type: .cpp
+#include "logindialog.h"
+#include "ui_logindialog.h"
+#include <QMessageBox>
+#include <QDebug>
+
+LoginDialog::LoginDialog(QWidget *parent) :
+    QDialog(parent),
+    ui(new Ui::LoginDialog),
+    socket(new QTcpSocket(this))
+{
+    ui->setupUi(this);
+
+    connect(ui->loginButton, &QPushButton::clicked, this, &LoginDialog::onLoginClicked);
+    connect(ui->registerButton, &QPushButton::clicked, this, &LoginDialog::onRegisterClicked);
+}
+
+LoginDialog::~LoginDialog()
+{
+    delete ui;
+}
+
+QString LoginDialog::getLogin() const
+{
+    return ui->loginEdit->text();
+}
+
+QString LoginDialog::getPassword() const
+{
+    return ui->passwordEdit->text();
+}
+
+void LoginDialog::setStatus(const QString &status, bool isError)
+{
+    ui->statusLabel->setText(status);
+    if (isError) {
+        ui->statusLabel->setStyleSheet("color: red;");
+    } else {
+        ui->statusLabel->setStyleSheet("color: green;");
+    }
+}
+
+QString LoginDialog::sendcommand(const QString command)
+{
+    if (socket->state() != QAbstractSocket::ConnectedState)
+    {
+        socket->connectToHost("127.0.0.1",54678);
+        if (!socket->waitForConnected(2000))
+        {
+            return QString("ERROR: cannot connect to server (%1)").arg(socket->errorString());
+        }
+        socket->waitForReadyRead(500);
+        socket->readAll();
+    }
+
+        socket->write(command.toUtf8());
+        if (!socket->waitForBytesWritten(2000)) {
+            return QString("ERROR: write failed (%1)").arg(socket->errorString());
+        }
+        if (!socket->waitForReadyRead(2000)) {
+            return QString("ERROR: no response (%1)").arg(socket->errorString());
+        }
+        return QString::fromUtf8(socket->readAll()).trimmed();
+}
+
+void LoginDialog::onLoginClicked()
+{
+    QString login = getLogin();
+    QString password = getPassword();
+
+    if (login.isEmpty() || password.isEmpty())
+    {
+        setStatus("Заполните все поля");
+        return;
+    }
+
+    setStatus("Проверка...", false);
+
+    QString cmd = QString("login||%1||%2").arg(login, password);
+    QString response = sendcommand(cmd + "\n");
+
+
+    if (response.startsWith("SUCCESS")) {
+        setStatus("Успешный вход!", false);
+        accept();  // Закрываем диалог с кодом Accepted
+    } else {
+        setStatus("Ошибка: " + response);
+    }
+
+}
+
+
+void LoginDialog::onRegisterClicked()
+{
+    done(2);  // код для открытия окна регистрации
+}
+
+
+
+
+
+
+
+
+--------------------------------------------------
+File End
+--------------------------------------------------
+
+
+MyClient\logindialog.h
+File type: .h
+#ifndef LOGINDIALOG_H
+#define LOGINDIALOG_H
+
+#include <QDialog>
+#include <QTcpSocket>
+
+namespace Ui{
+class LoginDialog;
+}
+
+class LoginDialog : public QDialog
+{
+    Q_OBJECT
+
+public:
+    explicit LoginDialog(QWidget *parent = nullptr);
+        ~LoginDialog();
+
+    QString getLogin() const;
+    QString getPassword() const;
+
+    void setStatus(const QString &status, bool is_error=true);
+
+private slots:
+    void onLoginClicked();
+    void onRegisterClicked();
+
+private:
+    Ui::LoginDialog *ui;
+    QTcpSocket *socket;
+
+    QString sendcommand(const QString command);
+
+};
+
+#endif // LOGINDIALOG_H
+
+
+--------------------------------------------------
+File End
+--------------------------------------------------
+
+
+MyClient\logindialog.ui
+File type: .ui
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>LoginDialog</class>
+ <widget class="QDialog" name="LoginDialog">
+  <property name="enabled">
+   <bool>true</bool>
+  </property>
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>400</width>
+    <height>300</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Авторизация</string>
+  </property>
+  <widget class="QLineEdit" name="loginEdit">
+   <property name="geometry">
+    <rect>
+     <x>100</x>
+     <y>80</y>
+     <width>200</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <property name="placeholderText">
+    <string>Логин</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="passwordEdit">
+   <property name="geometry">
+    <rect>
+     <x>100</x>
+     <y>120</y>
+     <width>200</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <property name="echoMode">
+    <enum>QLineEdit::EchoMode::Password</enum>
+   </property>
+   <property name="placeholderText">
+    <string>Пароль</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="loginButton">
+   <property name="geometry">
+    <rect>
+     <x>100</x>
+     <y>170</y>
+     <width>90</width>
+     <height>30</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Войти</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="registerButton">
+   <property name="geometry">
+    <rect>
+     <x>210</x>
+     <y>170</y>
+     <width>90</width>
+     <height>30</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Регистрация</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="statusLabel">
+   <property name="geometry">
+    <rect>
+     <x>100</x>
+     <y>220</y>
+     <width>200</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
+   <property name="geometry">
+    <rect>
+     <x>-60</x>
+     <y>150</y>
+     <width>191</width>
+     <height>161</height>
+    </rect>
+   </property>
+   <property name="lineWidth">
+    <number>1</number>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="pixmap">
+    <pixmap resource="../Images.qrc">:/image/cat.png</pixmap>
+   </property>
+   <property name="scaledContents">
+    <bool>true</bool>
+   </property>
+   <property name="indent">
+    <number>-1</number>
+   </property>
+   <property name="textInteractionFlags">
+    <set>Qt::TextInteractionFlag::TextSelectableByMouse</set>
+   </property>
+  </widget>
+ </widget>
+ <resources>
+  <include location="../Images.qrc"/>
+ </resources>
+ <connections/>
+</ui>
+
+
+--------------------------------------------------
+File End
+--------------------------------------------------
+
+
+MyClient\main.cpp
+File type: .cpp
+#include "mainwindow.h"
+#include <QApplication>
+
+int main(int argc, char *argv[])
+{
+    QApplication app(argc, argv);
+    MainWindow w;
+    return app.exec();
+}
+
+
+--------------------------------------------------
+File End
+--------------------------------------------------
+
+
+MyClient\mainwindow.cpp
+File type: .cpp
+#include "mainwindow.h"
+#include "ui_mainwindow.h"
+#include "logindialog.h"
+#include "regdialog.h"
+#include <QMessageBox>
+#include <QDebug>
+
+MainWindow::MainWindow(QWidget *parent)
+    : QMainWindow(parent)
+    , ui(new Ui::MainWindow)
+    , socket(new QTcpSocket(this))
+    , isAuthenticated(false)
+{
+    ui->setupUi(this);
+
+    // Скрываем основное окно до авторизации
+    hide();
+
+    // Показываем диалог логина
+    showLoginDialog();
+}
+
+MainWindow::~MainWindow()
+{
+    delete ui;
+}
+
+void MainWindow::showLoginDialog()
+{
+    LoginDialog loginDialog(this);
+
+    int result = loginDialog.exec();
+
+    if (result == QDialog::Accepted) {
+        // Успешный вход
+        isAuthenticated = true;
+        currentUser = loginDialog.getLogin();
+
+        // Показываем основное окно
+        show();
+
+        // Настраиваем интерфейс для работы с функцией
+        setupFunctionUi();
+
+        // Подключаемся к серверу для основной работы
+        connectToServer();
+
+        statusBar()->showMessage("Добро пожаловать, " + currentUser);
+    }
+    else if (result == 2) {
+        // Открываем регистрацию
+        showRegisterDialog();
+    }
+    else {
+        // Закрываем приложение
+        close();
+    }
+}
+
+void MainWindow::showRegisterDialog()
+{
+    RegisterDialog regDialog(this);
+
+    if (regDialog.exec() == QDialog::Accepted) {
+        QMessageBox::information(this, "Успех",
+                                 "Регистрация завершена! Теперь войдите.");
+        showLoginDialog();
+    } else {
+        showLoginDialog();
+    }
+}
+
+void MainWindow::setupFunctionUi()
+{
+    // настройка графического представления
+    // настройка слайдеров
+    // настройка таблицы
+    connect(ui->horizontalSlider, &QSlider::valueChanged,
+            this, &MainWindow::onParameter1Changed);
+    connect(ui->horizontalSlider_2, &QSlider::valueChanged,
+            this, &MainWindow::onParameter2Changed);
+    connect(ui->horizontalSlider_3, &QSlider::valueChanged,
+            this, &MainWindow::onParameter3Changed);
+    connect(ui->logoutBtn, &QPushButton::clicked, this, &MainWindow::onLogout);
+
+    // инициализация графика
+    updateGraph();
+}
+
+void MainWindow::connectToServer()
+{
+    if (socket->state() != QAbstractSocket::ConnectedState) {
+        socket->connectToHost("127.0.0.1", 54678);
+        if (socket->waitForConnected(2000)) {
+            socket->waitForReadyRead(500);
+            socket->readAll();
+            statusBar()->showMessage("Подключено к серверу", 2000);
+        }
+    }
+}
+
+
+
+void MainWindow::onParameter1Changed(int value)
+{
+    updateGraph();
+    ui->a_argument_label->setText(QString::number(value));
+}
+
+void MainWindow::onParameter2Changed(int value)
+{
+    updateGraph();
+    ui->b_argument_label->setText(QString::number(value));
+}
+
+void MainWindow::onParameter3Changed(int value)
+{
+    updateGraph();
+    ui->c_argument_label->setText(QString::number(value));
+}
+
+void MainWindow::updateGraph()
+{
+
+    qDebug() << "Updating graph with parameters:"
+             << ui->horizontalSlider->value()
+             << ui->horizontalSlider_2->value()
+             << ui->horizontalSlider_3->value();
+
+    QString cmd = QString("calculate||%1||%2||%3")
+                      .arg(ui->horizontalSlider->value())
+                      .arg(ui->horizontalSlider_2->value())
+                      .arg(ui->horizontalSlider_3->value());
+
+    QString response = sendCommand(cmd);
+    qDebug() << "Server response:" << response;
+
+    updateTable(response);
+}
+
+void MainWindow::updateTable(const QString &data)
+{
+    ui->tableWidget->setRowCount(10);
+    ui->tableWidget->setColumnCount(2);
+    ui->tableWidget->setHorizontalHeaderLabels({"X", "Y"});
+
+
+    QString trimmed = data;
+    if (trimmed.startsWith("SUCCESS:"))
+        trimmed = trimmed.mid(8);
+
+    QStringList points = trimmed.split(';', Qt::SkipEmptyParts);
+    ui->tableWidget->setRowCount(points.size());
+    ui->tableWidget->setColumnCount(2);
+    ui->tableWidget->setHorizontalHeaderLabels({"X", "Y"});
+
+    for (int i = 0; i < points.size(); ++i) {
+        QStringList xy = points[i].split(',');
+        if (xy.size() == 2) {
+            ui->tableWidget->setItem(i, 0, new QTableWidgetItem(xy[0]));
+            ui->tableWidget->setItem(i, 1, new QTableWidgetItem(xy[1]));
+        }
+    }
+
+
+
+}
+
+
+
+QString MainWindow::sendCommand(const QString& command)
+{
+    if (socket->state() != QAbstractSocket::ConnectedState) {
+        connectToServer();
+    }
+
+    socket->write((command + "\n").toUtf8());
+    if (!socket->waitForBytesWritten(2000)) {
+        return QString("ERROR: write failed");
+    }
+    if (!socket->waitForReadyRead(2000)) {
+        return QString("ERROR: no response");
+    }
+    return QString::fromUtf8(socket->readAll()).trimmed();
+}
+
+void MainWindow::onLogout()
+{
+    isAuthenticated = false;
+    currentUser = "";
+
+    if (socket->state() == QAbstractSocket::ConnectedState) {
+        socket->disconnectFromHost();
+    }
+
+    hide();
+    showLoginDialog();
+}
+
+
+--------------------------------------------------
+File End
+--------------------------------------------------
+
+
+MyClient\mainwindow.h
+File type: .h
+#ifndef MAINWINDOW_H
+#define MAINWINDOW_H
+
+#include <QMainWindow>
+#include <QTcpSocket>
+
+QT_BEGIN_NAMESPACE
+namespace Ui {
+class MainWindow;
+}
+QT_END_NAMESPACE
+
+class MainWindow : public QMainWindow
+{
+    Q_OBJECT
+
+public:
+    explicit MainWindow(QWidget *parent = nullptr);
+    ~MainWindow();
+
+    QString sendCommand(const QString& command);
+
+private slots:
+    void onParameter1Changed(int value);
+    void onParameter2Changed(int value);
+    void onParameter3Changed(int value);
+    void onLogout();
+
+private:
+    Ui::MainWindow *ui;
+    QTcpSocket *socket;
+    QString currentUser;
+    bool isAuthenticated;
+
+    void showLoginDialog();
+    void showRegisterDialog();
+    void setupFunctionUi();
+    void connectToServer();
+    void updateGraph();
+    void updateTable(const QString &data);
+};
+
+#endif // MAINWINDOW_H
+
+--------------------------------------------------
+File End
+--------------------------------------------------
+
+
+MyClient\mainwindow.ui
+File type: .ui
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1280</width>
+    <height>720</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QSlider" name="horizontalSlider">
+    <property name="geometry">
+     <rect>
+      <x>70</x>
+      <y>260</y>
+      <width>160</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="minimum">
+     <number>-100</number>
+    </property>
+    <property name="maximum">
+     <number>100</number>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Orientation::Horizontal</enum>
+    </property>
+   </widget>
+   <widget class="QSlider" name="horizontalSlider_2">
+    <property name="geometry">
+     <rect>
+      <x>70</x>
+      <y>300</y>
+      <width>160</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="minimum">
+     <number>-100</number>
+    </property>
+    <property name="maximum">
+     <number>100</number>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Orientation::Horizontal</enum>
+    </property>
+   </widget>
+   <widget class="QSlider" name="horizontalSlider_3">
+    <property name="geometry">
+     <rect>
+      <x>70</x>
+      <y>340</y>
+      <width>160</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="minimum">
+     <number>-100</number>
+    </property>
+    <property name="maximum">
+     <number>100</number>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Orientation::Horizontal</enum>
+    </property>
+   </widget>
+   <widget class="QGraphicsView" name="graphicsView">
+    <property name="geometry">
+     <rect>
+      <x>580</x>
+      <y>30</y>
+      <width>641</width>
+      <height>591</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>30</y>
+      <width>521</width>
+      <height>211</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap resource="../Images.qrc">:/image/func.png</pixmap>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_2">
+    <property name="geometry">
+     <rect>
+      <x>110</x>
+      <y>30</y>
+      <width>151</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Заданная функция</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_3">
+    <property name="geometry">
+     <rect>
+      <x>70</x>
+      <y>230</y>
+      <width>181</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Настройка параметров</string>
+    </property>
+   </widget>
+   <widget class="QTableWidget" name="tableWidget">
+    <property name="geometry">
+     <rect>
+      <x>110</x>
+      <y>380</y>
+      <width>211</width>
+      <height>291</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="logoutBtn">
+    <property name="geometry">
+     <rect>
+      <x>1140</x>
+      <y>650</y>
+      <width>80</width>
+      <height>24</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Выйти</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_4">
+    <property name="geometry">
+     <rect>
+      <x>-10</x>
+      <y>256</y>
+      <width>63</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>a</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_5">
+    <property name="geometry">
+     <rect>
+      <x>-10</x>
+      <y>295</y>
+      <width>63</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>b</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_6">
+    <property name="geometry">
+     <rect>
+      <x>-12</x>
+      <y>335</y>
+      <width>63</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>c</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="c_argument_label">
+    <property name="geometry">
+     <rect>
+      <x>240</x>
+      <y>338</y>
+      <width>63</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>0</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="b_argument_label">
+    <property name="geometry">
+     <rect>
+      <x>240</x>
+      <y>300</y>
+      <width>63</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>0</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="a_argument_label">
+    <property name="geometry">
+     <rect>
+      <x>240</x>
+      <y>260</y>
+      <width>63</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>0</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1280</width>
+     <height>25</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources>
+  <include location="../Images.qrc"/>
+ </resources>
+ <connections/>
+</ui>
+
+
+--------------------------------------------------
+File End
+--------------------------------------------------
+
+
+MyClient\MyClient.pro
+File type: .pro
+QT += core widgets network
+
+CONFIG += c++11
+
+# You can make your code fail to compile if it uses deprecated APIs.
+# In order to do so, uncomment the following line.
+#DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
+
+SOURCES += \
+    logindialog.cpp \
+    main.cpp \
+    mainwindow.cpp \
+    regdialog.cpp
+
+HEADERS += \
+    logindialog.h \
+    mainwindow.h \
+    regdialog.h
+
+FORMS += \
+    logindialog.ui \
+    mainwindow.ui \
+    regdialog.ui
+
+# Default rules for deployment.
+qnx: target.path = /tmp/$${TARGET}/bin
+else: unix:!android: target.path = /opt/$${TARGET}/bin
+!isEmpty(target.path): INSTALLS += target
+
+RESOURCES += \
+    Images.qrc
+
+
+--------------------------------------------------
+File End
+--------------------------------------------------
+
+
+MyClient\MyClient.pro.user
+File type: .user
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE QtCreatorProject>
+<!-- Written by QtCreator 14.0.1, 2026-04-20T20:27:03. -->
+<qtcreator>
+ <data>
+  <variable>EnvironmentId</variable>
+  <value type="QByteArray">{07a7221a-c1c0-4e3b-a9cf-83f63194f3e1}</value>
+ </data>
+ <data>
+  <variable>ProjectExplorer.Project.ActiveTarget</variable>
+  <value type="qlonglong">0</value>
+ </data>
+ <data>
+  <variable>ProjectExplorer.Project.EditorSettings</variable>
+  <valuemap type="QVariantMap">
+   <value type="bool" key="EditorConfiguration.AutoIndent">true</value>
+   <value type="bool" key="EditorConfiguration.AutoSpacesForTabs">false</value>
+   <value type="bool" key="EditorConfiguration.CamelCaseNavigation">true</value>
+   <valuemap type="QVariantMap" key="EditorConfiguration.CodeStyle.0">
+    <value type="QString" key="language">Cpp</value>
+    <valuemap type="QVariantMap" key="value">
+     <value type="QByteArray" key="CurrentPreferences">CppGlobal</value>
+    </valuemap>
+   </valuemap>
+   <valuemap type="QVariantMap" key="EditorConfiguration.CodeStyle.1">
+    <value type="QString" key="language">QmlJS</value>
+    <valuemap type="QVariantMap" key="value">
+     <value type="QByteArray" key="CurrentPreferences">QmlJSGlobal</value>
+    </valuemap>
+   </valuemap>
+   <value type="qlonglong" key="EditorConfiguration.CodeStyle.Count">2</value>
+   <value type="QByteArray" key="EditorConfiguration.Codec">UTF-8</value>
+   <value type="bool" key="EditorConfiguration.ConstrainTooltips">false</value>
+   <value type="int" key="EditorConfiguration.IndentSize">4</value>
+   <value type="bool" key="EditorConfiguration.KeyboardTooltips">false</value>
+   <value type="int" key="EditorConfiguration.MarginColumn">80</value>
+   <value type="bool" key="EditorConfiguration.MouseHiding">true</value>
+   <value type="bool" key="EditorConfiguration.MouseNavigation">true</value>
+   <value type="int" key="EditorConfiguration.PaddingMode">1</value>
+   <value type="int" key="EditorConfiguration.PreferAfterWhitespaceComments">0</value>
+   <value type="bool" key="EditorConfiguration.PreferSingleLineComments">false</value>
+   <value type="bool" key="EditorConfiguration.ScrollWheelZooming">true</value>
+   <value type="bool" key="EditorConfiguration.ShowMargin">false</value>
+   <value type="int" key="EditorConfiguration.SmartBackspaceBehavior">2</value>
+   <value type="bool" key="EditorConfiguration.SmartSelectionChanging">true</value>
+   <value type="bool" key="EditorConfiguration.SpacesForTabs">true</value>
+   <value type="int" key="EditorConfiguration.TabKeyBehavior">0</value>
+   <value type="int" key="EditorConfiguration.TabSize">8</value>
+   <value type="bool" key="EditorConfiguration.UseGlobal">true</value>
+   <value type="bool" key="EditorConfiguration.UseIndenter">false</value>
+   <value type="int" key="EditorConfiguration.Utf8BomBehavior">1</value>
+   <value type="bool" key="EditorConfiguration.addFinalNewLine">true</value>
+   <value type="bool" key="EditorConfiguration.cleanIndentation">true</value>
+   <value type="bool" key="EditorConfiguration.cleanWhitespace">true</value>
+   <value type="QString" key="EditorConfiguration.ignoreFileTypes">*.md, *.MD, Makefile</value>
+   <value type="bool" key="EditorConfiguration.inEntireDocument">false</value>
+   <value type="bool" key="EditorConfiguration.skipTrailingWhitespace">true</value>
+   <value type="bool" key="EditorConfiguration.tintMarginArea">true</value>
+  </valuemap>
+ </data>
+ <data>
+  <variable>ProjectExplorer.Project.PluginSettings</variable>
+  <valuemap type="QVariantMap">
+   <valuemap type="QVariantMap" key="AutoTest.ActiveFrameworks">
+    <value type="bool" key="AutoTest.Framework.Boost">true</value>
+    <value type="bool" key="AutoTest.Framework.CTest">false</value>
+    <value type="bool" key="AutoTest.Framework.Catch">true</value>
+    <value type="bool" key="AutoTest.Framework.GTest">true</value>
+    <value type="bool" key="AutoTest.Framework.QtQuickTest">true</value>
+    <value type="bool" key="AutoTest.Framework.QtTest">true</value>
+   </valuemap>
+   <value type="bool" key="AutoTest.ApplyFilter">false</value>
+   <valuemap type="QVariantMap" key="AutoTest.CheckStates"/>
+   <valuelist type="QVariantList" key="AutoTest.PathFilters"/>
+   <value type="int" key="AutoTest.RunAfterBuild">0</value>
+   <value type="bool" key="AutoTest.UseGlobal">true</value>
+   <valuemap type="QVariantMap" key="ClangTools">
+    <value type="bool" key="ClangTools.AnalyzeOpenFiles">true</value>
+    <value type="bool" key="ClangTools.BuildBeforeAnalysis">true</value>
+    <value type="QString" key="ClangTools.DiagnosticConfig">Builtin.DefaultTidyAndClazy</value>
+    <value type="int" key="ClangTools.ParallelJobs">6</value>
+    <value type="bool" key="ClangTools.PreferConfigFile">true</value>
+    <valuelist type="QVariantList" key="ClangTools.SelectedDirs"/>
+    <valuelist type="QVariantList" key="ClangTools.SelectedFiles"/>
+    <valuelist type="QVariantList" key="ClangTools.SuppressedDiagnostics"/>
+    <value type="bool" key="ClangTools.UseGlobalSettings">true</value>
+   </valuemap>
+  </valuemap>
+ </data>
+ <data>
+  <variable>ProjectExplorer.Project.Target.0</variable>
+  <valuemap type="QVariantMap">
+   <value type="QString" key="DeviceType">Desktop</value>
+   <value type="QString" key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName">Desktop Qt 6.8.0 (shared) MinGW-w64 MINGW64 (MSYS2)</value>
+   <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">Desktop Qt 6.8.0 (shared) MinGW-w64 MINGW64 (MSYS2)</value>
+   <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">qt6.shared.M2_MinGW-w64_MINGW64_kit</value>
+   <value type="qlonglong" key="ProjectExplorer.Target.ActiveBuildConfiguration">0</value>
+   <value type="qlonglong" key="ProjectExplorer.Target.ActiveDeployConfiguration">0</value>
+   <value type="qlonglong" key="ProjectExplorer.Target.ActiveRunConfiguration">0</value>
+   <valuemap type="QVariantMap" key="ProjectExplorer.Target.BuildConfiguration.0">
+    <value type="int" key="EnableQmlDebugging">0</value>
+    <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory">C:\Users\amvey\Documents\GitHub\TIMP-Task\MyClient\build\Desktop_Qt_6_8_0_shared_MinGW_w64_MINGW64_MSYS2-Debug</value>
+    <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory.shadowDir">C:/Users/amvey/Documents/GitHub/TIMP-Task/MyClient/build/Desktop_Qt_6_8_0_shared_MinGW_w64_MINGW64_MSYS2-Debug</value>
+    <valuemap type="QVariantMap" key="ProjectExplorer.BuildConfiguration.BuildStepList.0">
+     <valuemap type="QVariantMap" key="ProjectExplorer.BuildStepList.Step.0">
+      <value type="bool" key="ProjectExplorer.BuildStep.Enabled">true</value>
+      <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">QtProjectManager.QMakeBuildStep</value>
+      <value type="bool" key="QtProjectManager.QMakeBuildStep.QMakeForced">false</value>
+      <valuelist type="QVariantList" key="QtProjectManager.QMakeBuildStep.SelectedAbis"/>
+     </valuemap>
+     <valuemap type="QVariantMap" key="ProjectExplorer.BuildStepList.Step.1">
+      <value type="bool" key="ProjectExplorer.BuildStep.Enabled">true</value>
+      <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">Qt4ProjectManager.MakeStep</value>
+     </valuemap>
+     <value type="qlonglong" key="ProjectExplorer.BuildStepList.StepsCount">2</value>
+     <value type="QString" key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName">Сборка</value>
+     <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">Сборка</value>
+     <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">ProjectExplorer.BuildSteps.Build</value>
+    </valuemap>
+    <valuemap type="QVariantMap" key="ProjectExplorer.BuildConfiguration.BuildStepList.1">
+     <valuemap type="QVariantMap" key="ProjectExplorer.BuildStepList.Step.0">
+      <value type="bool" key="ProjectExplorer.BuildStep.Enabled">true</value>
+      <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">Qt4ProjectManager.MakeStep</value>
+      <value type="QString" key="Qt4ProjectManager.MakeStep.MakeArguments">clean</value>
+     </valuemap>
+     <value type="qlonglong" key="ProjectExplorer.BuildStepList.StepsCount">1</value>
+     <value type="QString" key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName">Очистка</value>
+     <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">Очистка</value>
+     <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">ProjectExplorer.BuildSteps.Clean</value>
+    </valuemap>
+    <value type="int" key="ProjectExplorer.BuildConfiguration.BuildStepListCount">2</value>
+    <value type="bool" key="ProjectExplorer.BuildConfiguration.ClearSystemEnvironment">false</value>
+    <valuelist type="QVariantList" key="ProjectExplorer.BuildConfiguration.CustomParsers"/>
+    <value type="bool" key="ProjectExplorer.BuildConfiguration.ParseStandardOutput">false</value>
+    <valuelist type="QVariantList" key="ProjectExplorer.BuildConfiguration.UserEnvironmentChanges"/>
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">Отладка</value>
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">Qt4ProjectManager.Qt4BuildConfiguration</value>
+    <value type="int" key="Qt4ProjectManager.Qt4BuildConfiguration.BuildConfiguration">2</value>
+   </valuemap>
+   <valuemap type="QVariantMap" key="ProjectExplorer.Target.BuildConfiguration.1">
+    <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory">C:\Users\amvey\Documents\GitHub\TIMP-Task\MyClient\build\Desktop_Qt_6_8_0_shared_MinGW_w64_MINGW64_MSYS2-Release</value>
+    <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory.shadowDir">C:/Users/amvey/Documents/GitHub/TIMP-Task/MyClient/build/Desktop_Qt_6_8_0_shared_MinGW_w64_MINGW64_MSYS2-Release</value>
+    <valuemap type="QVariantMap" key="ProjectExplorer.BuildConfiguration.BuildStepList.0">
+     <valuemap type="QVariantMap" key="ProjectExplorer.BuildStepList.Step.0">
+      <value type="bool" key="ProjectExplorer.BuildStep.Enabled">true</value>
+      <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">QtProjectManager.QMakeBuildStep</value>
+      <value type="bool" key="QtProjectManager.QMakeBuildStep.QMakeForced">false</value>
+      <valuelist type="QVariantList" key="QtProjectManager.QMakeBuildStep.SelectedAbis"/>
+     </valuemap>
+     <valuemap type="QVariantMap" key="ProjectExplorer.BuildStepList.Step.1">
+      <value type="bool" key="ProjectExplorer.BuildStep.Enabled">true</value>
+      <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">Qt4ProjectManager.MakeStep</value>
+     </valuemap>
+     <value type="qlonglong" key="ProjectExplorer.BuildStepList.StepsCount">2</value>
+     <value type="QString" key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName">Сборка</value>
+     <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">Сборка</value>
+     <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">ProjectExplorer.BuildSteps.Build</value>
+    </valuemap>
+    <valuemap type="QVariantMap" key="ProjectExplorer.BuildConfiguration.BuildStepList.1">
+     <valuemap type="QVariantMap" key="ProjectExplorer.BuildStepList.Step.0">
+      <value type="bool" key="ProjectExplorer.BuildStep.Enabled">true</value>
+      <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">Qt4ProjectManager.MakeStep</value>
+      <value type="QString" key="Qt4ProjectManager.MakeStep.MakeArguments">clean</value>
+     </valuemap>
+     <value type="qlonglong" key="ProjectExplorer.BuildStepList.StepsCount">1</value>
+     <value type="QString" key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName">Очистка</value>
+     <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">Очистка</value>
+     <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">ProjectExplorer.BuildSteps.Clean</value>
+    </valuemap>
+    <value type="int" key="ProjectExplorer.BuildConfiguration.BuildStepListCount">2</value>
+    <value type="bool" key="ProjectExplorer.BuildConfiguration.ClearSystemEnvironment">false</value>
+    <valuelist type="QVariantList" key="ProjectExplorer.BuildConfiguration.CustomParsers"/>
+    <value type="bool" key="ProjectExplorer.BuildConfiguration.ParseStandardOutput">false</value>
+    <valuelist type="QVariantList" key="ProjectExplorer.BuildConfiguration.UserEnvironmentChanges"/>
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">Выпуск</value>
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">Qt4ProjectManager.Qt4BuildConfiguration</value>
+    <value type="int" key="Qt4ProjectManager.Qt4BuildConfiguration.BuildConfiguration">0</value>
+    <value type="int" key="QtQuickCompiler">0</value>
+   </valuemap>
+   <valuemap type="QVariantMap" key="ProjectExplorer.Target.BuildConfiguration.2">
+    <value type="int" key="EnableQmlDebugging">0</value>
+    <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory">C:\Users\amvey\Documents\GitHub\TIMP-Task\MyClient\build\Desktop_Qt_6_8_0_shared_MinGW_w64_MINGW64_MSYS2-Profile</value>
+    <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory.shadowDir">C:/Users/amvey/Documents/GitHub/TIMP-Task/MyClient/build/Desktop_Qt_6_8_0_shared_MinGW_w64_MINGW64_MSYS2-Profile</value>
+    <valuemap type="QVariantMap" key="ProjectExplorer.BuildConfiguration.BuildStepList.0">
+     <valuemap type="QVariantMap" key="ProjectExplorer.BuildStepList.Step.0">
+      <value type="bool" key="ProjectExplorer.BuildStep.Enabled">true</value>
+      <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">QtProjectManager.QMakeBuildStep</value>
+      <value type="bool" key="QtProjectManager.QMakeBuildStep.QMakeForced">false</value>
+      <valuelist type="QVariantList" key="QtProjectManager.QMakeBuildStep.SelectedAbis"/>
+     </valuemap>
+     <valuemap type="QVariantMap" key="ProjectExplorer.BuildStepList.Step.1">
+      <value type="bool" key="ProjectExplorer.BuildStep.Enabled">true</value>
+      <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">Qt4ProjectManager.MakeStep</value>
+     </valuemap>
+     <value type="qlonglong" key="ProjectExplorer.BuildStepList.StepsCount">2</value>
+     <value type="QString" key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName">Сборка</value>
+     <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">Сборка</value>
+     <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">ProjectExplorer.BuildSteps.Build</value>
+    </valuemap>
+    <valuemap type="QVariantMap" key="ProjectExplorer.BuildConfiguration.BuildStepList.1">
+     <valuemap type="QVariantMap" key="ProjectExplorer.BuildStepList.Step.0">
+      <value type="bool" key="ProjectExplorer.BuildStep.Enabled">true</value>
+      <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">Qt4ProjectManager.MakeStep</value>
+      <value type="QString" key="Qt4ProjectManager.MakeStep.MakeArguments">clean</value>
+     </valuemap>
+     <value type="qlonglong" key="ProjectExplorer.BuildStepList.StepsCount">1</value>
+     <value type="QString" key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName">Очистка</value>
+     <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">Очистка</value>
+     <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">ProjectExplorer.BuildSteps.Clean</value>
+    </valuemap>
+    <value type="int" key="ProjectExplorer.BuildConfiguration.BuildStepListCount">2</value>
+    <value type="bool" key="ProjectExplorer.BuildConfiguration.ClearSystemEnvironment">false</value>
+    <valuelist type="QVariantList" key="ProjectExplorer.BuildConfiguration.CustomParsers"/>
+    <value type="bool" key="ProjectExplorer.BuildConfiguration.ParseStandardOutput">false</value>
+    <valuelist type="QVariantList" key="ProjectExplorer.BuildConfiguration.UserEnvironmentChanges"/>
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">Профилирование</value>
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">Qt4ProjectManager.Qt4BuildConfiguration</value>
+    <value type="int" key="Qt4ProjectManager.Qt4BuildConfiguration.BuildConfiguration">0</value>
+    <value type="int" key="QtQuickCompiler">0</value>
+    <value type="int" key="SeparateDebugInfo">0</value>
+   </valuemap>
+   <value type="qlonglong" key="ProjectExplorer.Target.BuildConfigurationCount">3</value>
+   <valuemap type="QVariantMap" key="ProjectExplorer.Target.DeployConfiguration.0">
+    <valuemap type="QVariantMap" key="ProjectExplorer.BuildConfiguration.BuildStepList.0">
+     <value type="qlonglong" key="ProjectExplorer.BuildStepList.StepsCount">0</value>
+     <value type="QString" key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName">Развёртывание</value>
+     <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">Развёртывание</value>
+     <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">ProjectExplorer.BuildSteps.Deploy</value>
+    </valuemap>
+    <value type="int" key="ProjectExplorer.BuildConfiguration.BuildStepListCount">1</value>
+    <valuemap type="QVariantMap" key="ProjectExplorer.DeployConfiguration.CustomData"/>
+    <value type="bool" key="ProjectExplorer.DeployConfiguration.CustomDataEnabled">false</value>
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">ProjectExplorer.DefaultDeployConfiguration</value>
+   </valuemap>
+   <value type="qlonglong" key="ProjectExplorer.Target.DeployConfigurationCount">1</value>
+   <valuemap type="QVariantMap" key="ProjectExplorer.Target.RunConfiguration.0">
+    <value type="bool" key="Analyzer.Perf.Settings.UseGlobalSettings">true</value>
+    <value type="bool" key="Analyzer.QmlProfiler.Settings.UseGlobalSettings">true</value>
+    <value type="int" key="Analyzer.Valgrind.Callgrind.CostFormat">0</value>
+    <value type="bool" key="Analyzer.Valgrind.Settings.UseGlobalSettings">true</value>
+    <valuelist type="QVariantList" key="CustomOutputParsers"/>
+    <value type="int" key="PE.EnvironmentAspect.Base">2</value>
+    <valuelist type="QVariantList" key="PE.EnvironmentAspect.Changes"/>
+    <value type="bool" key="PE.EnvironmentAspect.PrintOnRun">false</value>
+    <value type="QString" key="PerfRecordArgsId">-e cpu-cycles --call-graph &quot;dwarf,4096&quot; -F 250</value>
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName"></value>
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">Qt4ProjectManager.Qt4RunConfiguration:C:/Users/amvey/Documents/GitHub/TIMP-Task/MyClient/MyClient.pro</value>
+    <value type="QString" key="ProjectExplorer.RunConfiguration.BuildKey">C:/Users/amvey/Documents/GitHub/TIMP-Task/MyClient/MyClient.pro</value>
+    <value type="bool" key="ProjectExplorer.RunConfiguration.Customized">false</value>
+    <value type="bool" key="RunConfiguration.UseCppDebuggerAuto">true</value>
+    <value type="bool" key="RunConfiguration.UseLibrarySearchPath">true</value>
+    <value type="bool" key="RunConfiguration.UseQmlDebuggerAuto">true</value>
+    <value type="QString" key="RunConfiguration.WorkingDirectory.default">C:/Users/amvey/Documents/GitHub/TIMP-Task/MyClient/build/Desktop_Qt_6_8_0_shared_MinGW_w64_MINGW64_MSYS2-Debug</value>
+   </valuemap>
+   <value type="qlonglong" key="ProjectExplorer.Target.RunConfigurationCount">1</value>
+  </valuemap>
+ </data>
+ <data>
+  <variable>ProjectExplorer.Project.TargetCount</variable>
+  <value type="qlonglong">1</value>
+ </data>
+ <data>
+  <variable>ProjectExplorer.Project.Updater.FileVersion</variable>
+  <value type="int">22</value>
+ </data>
+ <data>
+  <variable>Version</variable>
+  <value type="int">22</value>
+ </data>
+</qtcreator>
+
+
+--------------------------------------------------
+File End
+--------------------------------------------------
+
+
+MyClient\regdialog.cpp
+File type: .cpp
+#include "regdialog.h"
+#include <QTimer>
+
+RegisterDialog::RegisterDialog(QWidget *parent) :
+    QDialog(parent),
+    ui(new Ui::RegisterDialog),
+    socket(new QTcpSocket(this))
+{
+    ui->setupUi(this);
+
+    connect(ui->registerButton, &QPushButton::clicked, this, &RegisterDialog::onRegisterClicked);
+}
+
+RegisterDialog::~RegisterDialog()
+{
+    delete ui;
+}
+
+void RegisterDialog::setStatus(const QString &status, bool isError)
+{
+    ui->statusLabel->setText(status);
+    if (isError) {
+        ui->statusLabel->setStyleSheet("color: red;");
+    } else {
+        ui->statusLabel->setStyleSheet("color: green;");
+    }
+}
+
+bool RegisterDialog::validateInput()
+{
+    if (ui->loginEdit->text().length() < 3) {
+        setStatus("Логин должен быть не менее 3 символов");
+        return false;
+    }
+    if (ui->passwordEdit->text().length() < 4) {
+        setStatus("Пароль должен быть не менее 4 символов");
+        return false;
+    }
+    if (ui->passwordEdit->text() != ui->confirmPasswordEdit->text()) {
+        setStatus("Пароли не совпадают");
+        return false;
+    }
+    if (!ui->emailEdit->text().contains("@")) {
+        setStatus("Введите корректный email");
+        return false;
+    }
+    return true;
+}
+
+QString RegisterDialog::sendCommand(const QString& command)
+{
+    if (socket->state() != QAbstractSocket::ConnectedState) {
+        socket->connectToHost("127.0.0.1", 54678);
+        if (!socket->waitForConnected(2000)) {
+            return QString("ERROR: cannot connect to server (%1)").arg(socket->errorString());
+        }
+        socket->waitForReadyRead(500);
+        socket->readAll();
+    }
+
+    socket->write(command.toUtf8());
+    if (!socket->waitForBytesWritten(2000)) {
+        return QString("ERROR: write failed (%1)").arg(socket->errorString());
+    }
+    if (!socket->waitForReadyRead(2000)) {
+        return QString("ERROR: no response (%1)").arg(socket->errorString());
+    }
+    return QString::fromUtf8(socket->readAll()).trimmed();
+}
+
+void RegisterDialog::onRegisterClicked()
+{
+    if (!validateInput()) return;
+
+    setStatus("Регистрация...", false);
+
+    QString cmd = QString("register||%1||%2||%3")
+                      .arg(ui->loginEdit->text())
+                      .arg(ui->passwordEdit->text())
+                      .arg(ui->emailEdit->text());
+
+    QString response = sendCommand(cmd + "\n");
+
+    if (response.startsWith("SUCCESS")) {
+        setStatus("Регистрация успешна! Теперь можно войти.", false);
+        // Ждём 2 секунды и закрываем окно
+        QTimer::singleShot(2000, this, &QDialog::accept);
+    } else {
+        setStatus("Ошибка: " + response);
+    }
+}
+
+--------------------------------------------------
+File End
+--------------------------------------------------
+
+
+MyClient\regdialog.h
+File type: .h
+#ifndef REGDIALOG_H
+#define REGDIALOG_H
+
+#include <QDialog>
+#include <QTcpSocket>
+#include "ui_regdialog.h"
+
+namespace Ui {
+class RegisterDialog;
+}
+
+class RegisterDialog : public QDialog
+{
+    Q_OBJECT
+
+public:
+    explicit RegisterDialog(QWidget *parent = nullptr);
+    ~RegisterDialog();
+
+    void setStatus(const QString &status, bool isError = true);
+
+private slots:
+    void onRegisterClicked();
+
+private:
+    Ui::RegisterDialog *ui;
+    QTcpSocket *socket;
+
+    QString sendCommand(const QString& command);
+    bool validateInput();
+};
+
+#endif // REGDIALOG_H
+
+--------------------------------------------------
+File End
+--------------------------------------------------
+
+
+MyClient\regdialog.ui
+File type: .ui
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>RegisterDialog</class>
+ <widget class="QDialog" name="RegisterDialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>400</width>
+    <height>350</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Регистрация</string>
+  </property>
+  
+  <widget class="QLineEdit" name="loginEdit">
+   <property name="geometry">
+    <rect>
+     <x>100</x>
+     <y>60</y>
+     <width>200</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <property name="placeholderText">
+    <string>Логин (мин. 3 символа)</string>
+   </property>
+  </widget>
+  
+  <widget class="QLineEdit" name="passwordEdit">
+   <property name="geometry">
+    <rect>
+     <x>100</x>
+     <y>110</y>
+     <width>200</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <property name="echoMode">
+    <enum>QLineEdit::Password</enum>
+   </property>
+   <property name="placeholderText">
+    <string>Пароль (мин. 4 символа)</string>
+   </property>
+  </widget>
+  
+  <widget class="QLineEdit" name="confirmPasswordEdit">
+   <property name="geometry">
+    <rect>
+     <x>100</x>
+     <y>160</y>
+     <width>200</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <property name="echoMode">
+    <enum>QLineEdit::Password</enum>
+   </property>
+   <property name="placeholderText">
+    <string>Подтвердите пароль</string>
+   </property>
+  </widget>
+  
+  <widget class="QLineEdit" name="emailEdit">
+   <property name="geometry">
+    <rect>
+     <x>100</x>
+     <y>210</y>
+     <width>200</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <property name="placeholderText">
+    <string>Email</string>
+   </property>
+  </widget>
+  
+  <widget class="QPushButton" name="registerButton">
+   <property name="geometry">
+    <rect>
+     <x>100</x>
+     <y>260</y>
+     <width>200</width>
+     <height>30</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Зарегистрироваться</string>
+   </property>
+  </widget>
+  
+  <widget class="QLabel" name="statusLabel">
+   <property name="geometry">
+    <rect>
+     <x>100</x>
+     <y>310</y>
+     <width>200</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+ </widget>
+</ui>
+
+--------------------------------------------------
+File End
+--------------------------------------------------
+
+
+MyClient\image\cat.png
+File type: .png
+[Binary/Non-UTF8 file - showing first 500 chars]
+PNG
+
+   
+IHDR  h  h   M;ç  gPLTE   xofNF@LE@bYSf]Vf]VLE@;4.0*%4-(6/*0*$(!1'3,$90(=4,?6-C:1G=4KA8ME<RH>UKBZQI]UMcYPc\Ui_VlbZnf^sh_vkb{qh|tmzsvm}ncsgznv}t{} ~§«±£¹©¿±¤¹¬Å¹®Ë¾±ÎÂµÓÉ¾ÑÅ¹ØÏÃáØÎëâÕÆ½´ÇÀ¹À·®»·²¸±«¶­¦±«¥±¨¡®¥© ¤¡©£¢ ©§¤|}yvxuqnkhsnjtrojhdecab_\ZYVPNKB@=<;8553'&# 
+*8"D-K4&O:-SB6`H:^B2[<+T3!E(¢X9mOÅ£Í»©Æµ¦¸¦®²'+010-FEBLIFSSR ±®«À¼¶Á¿½ÇÃ¿ËÇÂÐËÆÕÑËØÖÑÝÛÖáßÙçåàîíèöõïõëÛê×ÁàÌ¶ÙÀ¦Í³Ä«º¡¹¶...
+
+--------------------------------------------------
+File End
+--------------------------------------------------
+
+
+MyClient\image\func.png
+File type: .png
+[Binary/Non-UTF8 file - showing first 500 chars]
+ÿØÿà JFIF  ` `  ÿâÛICC_PROFILE   Ë    @  mntrRGB XYZ             acsp                             öÖ     Ó-Qt                                               	rXYZ   ð   gXYZ     bXYZ     wtpt  ,   cprt  @   rTRC  L    gTRC  L    bTRC  L    desc  l   _XYZ       o  8ô  XYZ       b  ·  ÜXYZ       $¡    ¶ÓXYZ       óO    Âtext    N/A para        ff  ò§  
+Y  Ð  
+[desc       sRGB                                                                               ÿÛ ...
+
+--------------------------------------------------
+File End
+--------------------------------------------------
+
+
+MyTcpServer\.dockerignore
+File type: no extension
+.git/
+*.o
+*.user
+*.swp
+Makefile
+EchoServer
+data/
+*.db
+.qtcreator
+readme.txt
+
+--------------------------------------------------
+File End
+--------------------------------------------------
+
+
+MyTcpServer\.gitignore
+File type: no extension
+# This file is used to ignore files which are generated
+# ----------------------------------------------------------------------------
+
+#кутишный мусор
+.qtcreator/
+
+*~
+*.autosave
+*.a
+*.core
+*.moc
+*.o
+*.obj
+*.orig
+*.rej
+*.so
+*.so.*
+*_pch.h.cpp
+*_resource.rc
+*.qm
+.#*
+*.*#
+core
+!core/
+tags
+.DS_Store
+.directory
+*.debug
+Makefile*
+*.prl
+*.app
+moc_*.cpp
+ui_*.h
+qrc_*.cpp
+Thumbs.db
+*.res
+*.rc
+/.qmake.cache
+/.qmake.stash
+
+# qtcreator generated files
+*.pro.user*
+*.qbs.user*
+CMakeLists.txt.user*
+
+# xemacs temporary files
+*.flc
+
+# Vim temporary files
+.*.swp
+
+# Visual Studio generated files
+*.ib_pdb_index
+*.idb
+*.ilk
+*.pdb
+*.sln
+*.suo
+*.vcproj
+*vcproj.*.*.user
+*.ncb
+*.sdf
+*.opensdf
+*.vcxproj
+*vcxproj.*
+
+# MinGW generated files
+*.Debug
+*.Release
+
+# Python byte code
+*.pyc
+
+# Binaries
+# --------
+*.dll
+*.exe
+
+# Directories with generated files
+.moc/
+.obj/
+.pch/
+.rcc/
+.uic/
+/build*/
+
+
+--------------------------------------------------
+File End
+--------------------------------------------------
+
+
+MyTcpServer\Dockerfile
+File type: no extension
+FROM ubuntu:24.04
+
+ENV DEBIAN_FRONTEND=noninteractive
+
+RUN apt-get update && apt-get install -y \
+    build-essential \
+    qt6-base-dev \
+    qt6-base-dev-tools \
+    libsqlite3-dev \
+    libqt6core6 \
+    libqt6network6 \
+    libpq-dev \
+    libpq5 \ 
+    nano \
+    && rm -rf /var/lib/apt/lists/*
+
+WORKDIR /app
+
+COPY . .
+
+RUN qmake6 && make
+
+EXPOSE 54678
+
+CMD ["./MyTcpServer"]
+
+--------------------------------------------------
+File End
+--------------------------------------------------
+
+
+MyTcpServer\main.cpp
+File type: .cpp
+#include <QCoreApplication>
+#include <mytcpserver.h>
+
+int main(int argc, char *argv[])
+{
+
+    QCoreApplication a(argc, argv);
+
+    MyTcpServer& myserv = MyTcpServer::getInstance();
+
+    if (myserv.start(54678))
+    {
+        qDebug() << "Server is running on port " << myserv.getPort();
+    }
+    else
+    {
+        qDebug() << "Failed to start a server";
+        return 1;
+    }
+
+    return a.exec();
+}
+
+
+
+// Set up code that uses the Qt event loop here.
+// Call a.quit() or a.exit() to quit the application.
+// A not very useful example would be including
+// #include <QTimer>
+// near the top of the file and calling
+// QTimer::singleShot(5000, &a, &QCoreApplication::quit);
+// which quits the application after 5 seconds.
+
+// If you do not need a running Qt event loop, remove the call
+// to a.exec() or use the Non-Qt Plain C++ Application template.
+
+--------------------------------------------------
+File End
+--------------------------------------------------
+
+
+MyTcpServer\message_parser.h
+File type: .h
+#ifndef MESSAGE_PARSER_H
+#define MESSAGE_PARSER_H
+
+#include <QString>
+#include <QStringList>
+#include <QDebug>
+
+class CommandParser
+{
+public:
+    enum Commands
+    {
+        CMD_UNKNOWN = 0,
+        CMD_REGISTER,
+        CMD_LOGIN,
+        CMD_AUTH,
+        CMD_FORGOT_PASSWORD,
+        CMD_HELP,
+        CMD_CALCULATE,
+    };
+
+    Commands stringToCommand(const QString& cmd) {
+        if (cmd == "register" || cmd == "reg") return CMD_REGISTER;
+        if (cmd == "login") return CMD_LOGIN;
+        if (cmd == "auth") return CMD_AUTH;
+        if (cmd == "forgot" || cmd == "forgot_password") return CMD_FORGOT_PASSWORD;
+        if (cmd == "help" || cmd == "?") return CMD_HELP;
+        if (cmd == "calculate") return CMD_CALCULATE;
+        return CMD_UNKNOWN;
+    }
+
+
+    QString commandToString(Commands cmd) {
+        switch(cmd) {
+        case CMD_REGISTER:          return "REGISTER";
+        case CMD_LOGIN:             return "LOGIN";
+        case CMD_AUTH:              return "AUTH";
+        case CMD_FORGOT_PASSWORD:   return "FORGOT_PASSWORD";
+        case CMD_HELP:              return "HELP";
+        case CMD_CALCULATE:         return "CALCULATE";
+        default:                    return "UNKNOWN";
+        }
+    }
+
+    QString cmdSequenceToString(const QString& sequence) {
+        QString result;
+
+        for (int i=0; i<sequence.length()   ; i++) {
+
+            QChar c = sequence[i];
+
+            if (c == '\b') {
+                if (!result.isEmpty()) {
+                    result.chop(1);
+                }
+            } else {
+                result.append(c);
+            }
+        }
+
+
+        return result;
+    }
+
+    struct ParsedCommand
+    {
+        Commands command;
+        QStringList params;
+
+        bool is_valid;
+        QString error;
+
+        ParsedCommand() : command(CMD_UNKNOWN), is_valid(false) {}
+    };
+
+    ParsedCommand parse(const QString& input)
+    {
+        ParsedCommand result;
+
+        QString data = cmdSequenceToString(input).trimmed();
+        if (data.isEmpty())
+        {
+            result.error = "Empty message";
+            return result;
+        }
+
+        QStringList parts = data.split("||");
+        if (parts.isEmpty())
+        {
+            result.error = "No data";
+            return result;
+        }
+
+        QString cmdStr = parts[0].toLower();
+        result.command = stringToCommand(cmdStr);
+
+        if (result.command == CMD_UNKNOWN)
+        {
+            result.error = "Unknown command: " + cmdStr;
+            return result;
+        }
+
+        for (int i = 1; i < parts.size(); i++)
+        {
+            result.params.append(parts[i]);
+        }
+
+        if (!validateParams(result))
+        {
+            return result;
+        }
+
+        result.is_valid = true;
+        return result;
+    }
+
+    QString getHelp()
+    {
+        return "Available commands:\r\n"
+               "  register||login||password||email - register new user\r\n"
+               "  login||login||password     - login\r\n"
+               "  auth||login||password      - authenticate\r\n"
+               "  forgot||email||newpassword - reset password by email\r\n"
+               "  calculate||a||b||c         - calculate function with given arguments\r\n"
+               "  help                       - show this help\r\n";
+    }
+
+private:
+    bool validateParams(ParsedCommand& result)
+    {
+        switch (result.command)
+        {
+        case CMD_REGISTER:
+        {
+            if (result.params.size() != 3)
+            {
+                result.error = "Registration needs 3 params: login, password, email";
+                return false;
+            }
+            if (result.params[0].length() < 3)
+            {
+                result.error = "Login too short (min 3 characters)";
+                return false;
+            }
+            if (result.params[1].length() < 4)
+            {
+                result.error = "Password too short (min 4 characters)";
+                return false;
+            }
+            if (!result.params[2].contains("@"))
+            {
+                result.error = "Invalid email";
+                return false;
+            }
+        }
+        break;
+
+        case CMD_LOGIN:
+        case CMD_AUTH:
+        {
+            if (result.params.size() != 2)
+            {
+                result.error = "Login/auth needs: login and password";
+                return false;
+            }
+            if (result.params[0].isEmpty())
+            {
+                result.error = "Login cannot be empty";
+                return false;
+            }
+            if (result.params[1].isEmpty())
+            {
+                result.error = "Password cannot be empty";
+                return false;
+            }
+        }
+        break;
+
+        case CMD_FORGOT_PASSWORD:
+        {
+            if (result.params.size() != 2)
+            {
+                result.error = "Forgot password needs 2 params: email and new password";
+                return false;
+            }
+            if (!result.params[0].contains("@"))
+            {
+                result.error = "Valid email is required";
+                return false;
+            }
+            if (result.params[1].length() < 4)
+            {
+                result.error = "New password too short (min 4 characters)";
+                return false;
+            }
+        }
+        break;
+
+        case CMD_HELP:
+            break;
+
+        case CMD_CALCULATE:
+            if (result.params.size() != 3)
+            {
+                result.error = "Calculate function requires exactly 3 function arguments";
+                return false;
+            };
+
+        case CMD_UNKNOWN:
+            result.error = "Unknown command";
+            return false;
+        }
+        return true;
+    }
+};
+
+#endif // MESSAGE_PARSER_H
+
+
+--------------------------------------------------
+File End
+--------------------------------------------------
+
+
+MyTcpServer\mydb.h
+File type: .h
+#ifndef DB_HANDLER_H
+#define DB_HANDLER_H
+
+#include <QObject>
+#include <QSqlDatabase>
+#include <QSqlQuery>
+#include <QSqlError>
+#include <QSqlRecord>
+#include <QVariant>
+#include <QCryptographicHash>
+#include <QDebug>
+#include <QUuid>
+
+class MyDBHandler : public QObject
+{
+    Q_OBJECT
+
+public:
+    MyDBHandler(QObject *parent = nullptr) : QObject(parent) {
+        connectionName = QUuid::createUuid().toString(QUuid::WithoutBraces);
+        db = QSqlDatabase::addDatabase("QSQLITE", connectionName);
+        db.setDatabaseName("Test.db");
+        open();
+        CreateTable();
+    }
+
+    ~MyDBHandler() {
+        disconnect();
+        if (!connectionName.isEmpty()) {
+            const QString name = connectionName;
+            connectionName.clear();
+            db = QSqlDatabase();
+            QSqlDatabase::removeDatabase(name);
+        }
+    }
+
+    operator bool() const {
+        return db.isOpen();
+    }
+
+    bool open() {
+        if (!db.isOpen()) {
+            if (!db.open()) {
+                qDebug() << "Failed to open database:" << db.lastError().text();
+                return false;
+            }
+        }
+        return true;
+    }
+
+    void disconnect() {
+        if (db.isOpen()) {
+            db.close();
+        }
+    }
+
+    bool regUser(const QString& login, const QString& password, const QString& email) {
+        if (!open()) return false;
+
+        if (existsEmail(email) || existsUser(login)) return false;
+
+        QSqlQuery query(db);
+        query.prepare("INSERT INTO Users(login, password, email) "
+                      "VALUES (:login, :password, :email)");
+
+        QString hashedPassword = HashPassword(password);
+
+        query.bindValue(":login", login);
+        query.bindValue(":password", hashedPassword);
+        query.bindValue(":email", email);
+
+        return query.exec();
+    }
+
+    bool authUser(const QString& login, const QString& password) {
+        if (!open()) return false;
+
+        QSqlQuery query(db);
+        query.prepare("SELECT password FROM Users WHERE login = (:login)");
+        query.bindValue(":login", login);
+
+        if (!query.exec()) return false;
+
+        if (query.next()) {
+            QString storedHash = query.value(0).toString();
+            QString inputHash = HashPassword(password);
+            return storedHash == inputHash;
+        }
+
+        return false;
+    }
+
+    bool resetPasswordByEmail(const QString& email, const QString& newPassword) {
+        if (!open()) return false;
+
+        if (!existsEmail(email)) return false;
+
+        QSqlQuery query(db);
+        query.prepare("UPDATE Users SET password = (:password) WHERE email = (:email)");
+
+        QString hashedPassword = HashPassword(newPassword);
+        query.bindValue(":password", hashedPassword);
+        query.bindValue(":email", email);
+
+        return query.exec();
+    }
+
+    bool existsEmail(const QString& email) {
+        if (!open()) return false;
+
+        QSqlQuery query(db);
+        query.prepare("SELECT email FROM Users WHERE email = (:email)");
+        query.bindValue(":email", email);
+
+        if (!query.exec()) return false;
+
+        return query.next();
+    }
+
+    bool existsUser(const QString& login) {
+        if (!open()) return false;
+
+        QSqlQuery query(db);
+        query.prepare("SELECT login FROM Users WHERE login = (:login)");
+        query.bindValue(":login", login);
+
+        if (!query.exec()) return false;
+
+        return query.next();
+    }
+
+    bool deleteUser(const QString& login) {
+        if (!open()) return false;
+
+        QSqlQuery query(db);
+        query.prepare("DELETE FROM Users WHERE login = (:login)");
+        query.bindValue(":login", login);
+
+        return query.exec();
+    }
+
+private:
+    QSqlDatabase db;
+    QString connectionName;
+
+    QString HashPassword(const QString& password) {
+        QByteArray hash = QCryptographicHash::hash(password.toUtf8(), QCryptographicHash::Sha256);
+        return QString(hash.toHex());
+    }
+
+    bool CreateTable() {
+        QSqlQuery query(db);
+        return query.exec("CREATE TABLE IF NOT EXISTS Users("
+                          "login TEXT PRIMARY KEY, "
+                          "password TEXT NOT NULL, "
+                          "email TEXT UNIQUE NOT NULL"
+                          ")");
+    }
+};
+
+#endif // DB_HANDLER_H
+
+
+--------------------------------------------------
+File End
+--------------------------------------------------
+
+
+MyTcpServer\myFunction.h
+File type: .h
+#ifndef FUNC_HANDLER_H
+#define FUNC_HANDLER_H
+
+#include <cmath>
+
+class myFunc {
+public:
+    myFunc();
+    ~myFunc();
+    double solveForX(int x, int a, int b, int c) {
+        if (x<0) {
+            return std::abs(x)*a;
+        }
+        if (x>=1) {
+            return (x*x*2 - 2*x + 1)*b;
+        }
+        return c/x;
+    }
+
+    QString generateFunctionData(int a, int b, int c)
+    {
+        QStringList points;
+        const double start = -10.0;
+        const double end = 10.0;
+        const double step = 0.1;
+
+        for (double x = start; x <= end + step/2; x += step) {
+            double y = solveForX(static_cast<float>(x), a, b, c);
+            points.append(QString("%1,%2").arg(x, 0, 'f', 2).arg(y, 0, 'f', 6));
+        }
+        return points.join(";");
+    }
+};
+
+
+#endif // FUNC_HANDLER_H
+
+
+--------------------------------------------------
+File End
+--------------------------------------------------
+
+
+MyTcpServer\mytcpserver.cpp
+File type: .cpp
+#include <QDebug>
+#include <QCoreApplication>
+#include <QString>
+
+#include "mytcpserver.h"
+#include "mydb.h"
+#include "myFunction.h"
+
+myFunc solver;
+
+MyTcpServer::~MyTcpServer()
+{
+
+    stop();
+    if (db) {
+        db->disconnect();
+        delete db;
+        db = nullptr;
+    }
+}
+
+MyTcpServer& MyTcpServer::getInstance()
+{
+    static MyTcpServer instance;
+    return instance;
+}
+
+MyTcpServer::MyTcpServer(QObject *parent) : QObject(parent)
+    , pTcpServer(nullptr)
+    , pTcpSocket(nullptr)
+    , db(nullptr)
+    , port(0)
+    , isRunFlag(false)
+{
+    db = new MyDBHandler(this);
+    if (!db || !(*db)) {
+       qWarning() << "DB connection is not available, auth operations will fail";
+    }
+
+    pTcpServer = new QTcpServer(this);
+
+    connect(pTcpServer, &QTcpServer::newConnection, this, &MyTcpServer::slotNewConnection);
+}
+
+bool MyTcpServer::start(quint16 port)
+{
+    if (isRunFlag) {
+        qDebug() << "Server already running on port" << this->port;
+        return true;
+    }
+
+    this->port = port;
+
+    if (!pTcpServer->listen(QHostAddress::Any, port)) {
+        qDebug() << "Failed to start server on port" << port
+                 << "Error:" << pTcpServer->errorString();
+        return false;
+    }
+
+    isRunFlag = true;
+    qDebug() << "Server started successfully on port" << port;
+    return true;
+}
+
+void MyTcpServer::stop()
+{
+    if (!isRunFlag) return;
+
+    // закрываем все клиентские соединения
+    for (QTcpSocket* socket : socketBuffers.keys()) {
+        socket->close();
+        socket->deleteLater();
+    }
+    socketBuffers.clear();
+
+    // закрытие сервера
+    if (pTcpServer) {
+        pTcpServer->close();
+    }
+
+    isRunFlag = false;
+    qDebug() << "Server stopped";
+}
+
+
+bool MyTcpServer::isRunning() const
+{
+    return isRunFlag && pTcpServer && pTcpServer->isListening();
+}
+
+quint16 MyTcpServer::getPort() const
+{
+    return port;
+}
+
+// ================= слоты
+
+void MyTcpServer::slotNewConnection(){
+    QTcpSocket *socket = pTcpServer->nextPendingConnection();
+    if (!socket) {
+        return;
+    }
+    socketBuffers.insert(socket, "");
+    socket->write("I am your server! Please login!!!\r\n");
+
+    connect(socket,&QTcpSocket::readyRead,this, &MyTcpServer::slotServerRead);
+    connect(socket,&QTcpSocket::disconnected,this,&MyTcpServer::slotClientDisconnected);
+
+    qDebug() << "New client connected"; // можно добавить информацию о клиенте
+}
+
+
+void  MyTcpServer::slotClientDisconnected()
+{
+    QTcpSocket *socket = qobject_cast<QTcpSocket*>(sender());
+    if (socket)
+    {
+        socketBuffers.remove(socket);
+        socket->close();
+        socket->deleteLater();
+        qDebug() << "Client disconnected";
+    }
+}
+
+void MyTcpServer::slotServerRead()
+{
+    QTcpSocket *socket = qobject_cast<QTcpSocket*>(sender());
+    if (!socket) {
+        return;
+    }
+
+
+    QString &res = socketBuffers[socket];
+
+    if(res.size()> 65536)
+    {
+        socket->write("Error: message to long");
+        res.clear();
+        return;
+    }
+
+
+    while(socket->bytesAvailable() > 0)
+    {
+        QByteArray array = socket->readAll();
+        qDebug() << "Received:" << array;
+
+        res.append(QString::fromUtf8(array));
+    }
+
+    if (res.isEmpty()) return;
+
+    if (res[res.size() - 1] != '\n') {
+        return;
+    }
+
+    qDebug() << "Full buffer:" << res;
+
+    CommandParser parser;
+    CommandParser::ParsedCommand cmd = parser.parse(res.trimmed());
+
+    qDebug() << "Parse result - command:" << cmd.command
+             << "is_valid:" << cmd.is_valid
+             << "error:" << cmd.error
+             << "params:" << cmd.params;
+
+    res = "";
+
+    if (!cmd.is_valid)
+    {
+        socket->write(("ERROR: " + cmd.error + "\r\n").toUtf8());
+        return;
+    }
+
+    switch(cmd.command)
+    {
+    case CommandParser::CMD_REGISTER:
+        if (cmd.params.size() == 3 && db && db->regUser(cmd.params[0], cmd.params[1], cmd.params[2]))
+        {
+            socket->write("SUCCESS: User registered\r\n");
+            qDebug() << "user registrated";
+            res.clear();
+        }
+        else
+        {
+            socket->write("ERROR: Registration failed\r\n");
+        }
+        break;
+
+    case CommandParser::CMD_LOGIN:
+    case CommandParser::CMD_AUTH:
+        if (cmd.params.size() == 2 && db && db->authUser(cmd.params[0], cmd.params[1]))
+        {
+            socket->write("SUCCESS: Login successful\r\n");
+            qDebug() << "user logged";
+            res.clear();
+        }
+        else
+        {
+            socket->write("ERROR: Invalid credentials\r\n");
+        }
+        break;
+
+    case CommandParser::CMD_FORGOT_PASSWORD:
+        if (cmd.params.size() == 2 && db && db->resetPasswordByEmail(cmd.params[0], cmd.params[1]))
+        {
+            socket->write("SUCCESS: Password reset by email\r\n");
+            res.clear();
+        }
+        else
+        {
+            socket->write("ERROR: Password reset failed\r\n");
+        }
+        break;
+
+    case CommandParser::CMD_HELP:
+        socket->write(parser.getHelp().toUtf8());
+        res.clear();
+        break;
+
+    case CommandParser::CMD_CALCULATE:
+    {
+        int a = cmd.params[0].toInt();
+        int b = cmd.params[1].toInt();
+        int c = cmd.params[2].toInt();
+        QString data = solver.generateFunctionData(a, b, c);
+        socket->write(("SUCCESS:" + data + "\r\n").toUtf8());
+        break;
+    }
+
+    default:
+        socket->write("ERROR: Unknown command\r\n");
+        break;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+--------------------------------------------------
+File End
+--------------------------------------------------
+
+
+MyTcpServer\mytcpserver.h
+File type: .h
+#ifndef MYTCPSERVER_H
+#define MYTCPSERVER_H
+
+#include <QObject>
+#include <QTcpServer>
+#include <QTcpSocket>
+#include <QHash>
+#include <mydb.h>
+#include <message_parser.h>
+
+class MyTcpServer : public QObject
+{
+    Q_OBJECT
+public:
+    static MyTcpServer& getInstance();
+    ~MyTcpServer();
+
+    bool start(quint16 port = 54678);
+    void stop();
+    bool isRunning() const;
+    quint16 getPort() const;
+
+
+public slots:
+    void slotNewConnection();
+    void slotClientDisconnected();
+    void slotServerRead();
+private:
+    explicit MyTcpServer(QObject *parent = nullptr);
+    MyTcpServer(const MyTcpServer&) = delete;
+    MyTcpServer& operator=(const MyTcpServer&) = delete;
+
+
+
+    QTcpServer * pTcpServer;
+    QTcpSocket * pTcpSocket;
+    QHash<QTcpSocket*, QString> socketBuffers;
+    MyDBHandler * db;
+    quint16 port;
+    bool isRunFlag;
+};
+
+#endif // MYTCPSERVER_H
+
+
+--------------------------------------------------
+File End
+--------------------------------------------------
+
+
+MyTcpServer\MyTcpServer.pro
+File type: .pro
+QT -= GUID
+QT += network sql
+
+CONFIG += c++11 console
+CONFIG -= app_bundle
+
+# You can make your code fail to compile if it uses deprecated APIs.
+# In order to do so, uncomment the following line.
+#DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
+
+SOURCES += \
+        main.cpp \
+        mytcpserver.cpp
+
+# Default rules for deployment.
+qnx: target.path = /tmp/$${TARGET}/bin
+else: unix:!android: target.path = /opt/$${TARGET}/bin
+!isEmpty(target.path): INSTALLS += target
+
+
+HEADERS += \
+    message_parser.h \
+    myFunction.h \
+    mydb.h \
+    mytcpserver.h
+
+
+--------------------------------------------------
+File End
+--------------------------------------------------
+
+
+MyTcpServer\MyTcpServer.pro.user
+File type: .user
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE QtCreatorProject>
+<!-- Written by QtCreator 14.0.1, 2026-04-20T20:27:03. -->
+<qtcreator>
+ <data>
+  <variable>EnvironmentId</variable>
+  <value type="QByteArray">{07a7221a-c1c0-4e3b-a9cf-83f63194f3e1}</value>
+ </data>
+ <data>
+  <variable>ProjectExplorer.Project.ActiveTarget</variable>
+  <value type="qlonglong">0</value>
+ </data>
+ <data>
+  <variable>ProjectExplorer.Project.EditorSettings</variable>
+  <valuemap type="QVariantMap">
+   <value type="bool" key="EditorConfiguration.AutoIndent">true</value>
+   <value type="bool" key="EditorConfiguration.AutoSpacesForTabs">false</value>
+   <value type="bool" key="EditorConfiguration.CamelCaseNavigation">true</value>
+   <valuemap type="QVariantMap" key="EditorConfiguration.CodeStyle.0">
+    <value type="QString" key="language">Cpp</value>
+    <valuemap type="QVariantMap" key="value">
+     <value type="QByteArray" key="CurrentPreferences">CppGlobal</value>
+    </valuemap>
+   </valuemap>
+   <valuemap type="QVariantMap" key="EditorConfiguration.CodeStyle.1">
+    <value type="QString" key="language">QmlJS</value>
+    <valuemap type="QVariantMap" key="value">
+     <value type="QByteArray" key="CurrentPreferences">QmlJSGlobal</value>
+    </valuemap>
+   </valuemap>
+   <value type="qlonglong" key="EditorConfiguration.CodeStyle.Count">2</value>
+   <value type="QByteArray" key="EditorConfiguration.Codec">UTF-8</value>
+   <value type="bool" key="EditorConfiguration.ConstrainTooltips">false</value>
+   <value type="int" key="EditorConfiguration.IndentSize">4</value>
+   <value type="bool" key="EditorConfiguration.KeyboardTooltips">false</value>
+   <value type="int" key="EditorConfiguration.MarginColumn">80</value>
+   <value type="bool" key="EditorConfiguration.MouseHiding">true</value>
+   <value type="bool" key="EditorConfiguration.MouseNavigation">true</value>
+   <value type="int" key="EditorConfiguration.PaddingMode">1</value>
+   <value type="int" key="EditorConfiguration.PreferAfterWhitespaceComments">0</value>
+   <value type="bool" key="EditorConfiguration.PreferSingleLineComments">false</value>
+   <value type="bool" key="EditorConfiguration.ScrollWheelZooming">true</value>
+   <value type="bool" key="EditorConfiguration.ShowMargin">false</value>
+   <value type="int" key="EditorConfiguration.SmartBackspaceBehavior">2</value>
+   <value type="bool" key="EditorConfiguration.SmartSelectionChanging">true</value>
+   <value type="bool" key="EditorConfiguration.SpacesForTabs">true</value>
+   <value type="int" key="EditorConfiguration.TabKeyBehavior">0</value>
+   <value type="int" key="EditorConfiguration.TabSize">8</value>
+   <value type="bool" key="EditorConfiguration.UseGlobal">true</value>
+   <value type="bool" key="EditorConfiguration.UseIndenter">false</value>
+   <value type="int" key="EditorConfiguration.Utf8BomBehavior">1</value>
+   <value type="bool" key="EditorConfiguration.addFinalNewLine">true</value>
+   <value type="bool" key="EditorConfiguration.cleanIndentation">true</value>
+   <value type="bool" key="EditorConfiguration.cleanWhitespace">true</value>
+   <value type="QString" key="EditorConfiguration.ignoreFileTypes">*.md, *.MD, Makefile</value>
+   <value type="bool" key="EditorConfiguration.inEntireDocument">false</value>
+   <value type="bool" key="EditorConfiguration.skipTrailingWhitespace">true</value>
+   <value type="bool" key="EditorConfiguration.tintMarginArea">true</value>
+  </valuemap>
+ </data>
+ <data>
+  <variable>ProjectExplorer.Project.PluginSettings</variable>
+  <valuemap type="QVariantMap">
+   <valuemap type="QVariantMap" key="AutoTest.ActiveFrameworks">
+    <value type="bool" key="AutoTest.Framework.Boost">true</value>
+    <value type="bool" key="AutoTest.Framework.CTest">false</value>
+    <value type="bool" key="AutoTest.Framework.Catch">true</value>
+    <value type="bool" key="AutoTest.Framework.GTest">true</value>
+    <value type="bool" key="AutoTest.Framework.QtQuickTest">true</value>
+    <value type="bool" key="AutoTest.Framework.QtTest">true</value>
+   </valuemap>
+   <value type="bool" key="AutoTest.ApplyFilter">false</value>
+   <valuemap type="QVariantMap" key="AutoTest.CheckStates"/>
+   <valuelist type="QVariantList" key="AutoTest.PathFilters"/>
+   <value type="int" key="AutoTest.RunAfterBuild">0</value>
+   <value type="bool" key="AutoTest.UseGlobal">true</value>
+   <valuemap type="QVariantMap" key="ClangTools">
+    <value type="bool" key="ClangTools.AnalyzeOpenFiles">true</value>
+    <value type="bool" key="ClangTools.BuildBeforeAnalysis">true</value>
+    <value type="QString" key="ClangTools.DiagnosticConfig">Builtin.DefaultTidyAndClazy</value>
+    <value type="int" key="ClangTools.ParallelJobs">6</value>
+    <value type="bool" key="ClangTools.PreferConfigFile">true</value>
+    <valuelist type="QVariantList" key="ClangTools.SelectedDirs"/>
+    <valuelist type="QVariantList" key="ClangTools.SelectedFiles"/>
+    <valuelist type="QVariantList" key="ClangTools.SuppressedDiagnostics"/>
+    <value type="bool" key="ClangTools.UseGlobalSettings">true</value>
+   </valuemap>
+  </valuemap>
+ </data>
+ <data>
+  <variable>ProjectExplorer.Project.Target.0</variable>
+  <valuemap type="QVariantMap">
+   <value type="QString" key="DeviceType">Desktop</value>
+   <value type="QString" key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName">Desktop Qt 6.8.0 (shared) MinGW-w64 MINGW64 (MSYS2)</value>
+   <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">Desktop Qt 6.8.0 (shared) MinGW-w64 MINGW64 (MSYS2)</value>
+   <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">qt6.shared.M2_MinGW-w64_MINGW64_kit</value>
+   <value type="qlonglong" key="ProjectExplorer.Target.ActiveBuildConfiguration">0</value>
+   <value type="qlonglong" key="ProjectExplorer.Target.ActiveDeployConfiguration">0</value>
+   <value type="qlonglong" key="ProjectExplorer.Target.ActiveRunConfiguration">0</value>
+   <valuemap type="QVariantMap" key="ProjectExplorer.Target.BuildConfiguration.0">
+    <value type="int" key="EnableQmlDebugging">0</value>
+    <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory">C:\Users\amvey\Documents\GitHub\TIMP-Task\MyTcpServer\build\Desktop_Qt_6_8_0_shared_MinGW_w64_MINGW64_MSYS2-Debug</value>
+    <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory.shadowDir">C:/Users/amvey/Documents/GitHub/TIMP-Task/MyTcpServer/build/Desktop_Qt_6_8_0_shared_MinGW_w64_MINGW64_MSYS2-Debug</value>
+    <valuemap type="QVariantMap" key="ProjectExplorer.BuildConfiguration.BuildStepList.0">
+     <valuemap type="QVariantMap" key="ProjectExplorer.BuildStepList.Step.0">
+      <value type="bool" key="ProjectExplorer.BuildStep.Enabled">true</value>
+      <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">QtProjectManager.QMakeBuildStep</value>
+      <value type="bool" key="QtProjectManager.QMakeBuildStep.QMakeForced">false</value>
+      <valuelist type="QVariantList" key="QtProjectManager.QMakeBuildStep.SelectedAbis"/>
+     </valuemap>
+     <valuemap type="QVariantMap" key="ProjectExplorer.BuildStepList.Step.1">
+      <value type="bool" key="ProjectExplorer.BuildStep.Enabled">true</value>
+      <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">Qt4ProjectManager.MakeStep</value>
+     </valuemap>
+     <value type="qlonglong" key="ProjectExplorer.BuildStepList.StepsCount">2</value>
+     <value type="QString" key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName">Сборка</value>
+     <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">Сборка</value>
+     <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">ProjectExplorer.BuildSteps.Build</value>
+    </valuemap>
+    <valuemap type="QVariantMap" key="ProjectExplorer.BuildConfiguration.BuildStepList.1">
+     <valuemap type="QVariantMap" key="ProjectExplorer.BuildStepList.Step.0">
+      <value type="bool" key="ProjectExplorer.BuildStep.Enabled">true</value>
+      <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">Qt4ProjectManager.MakeStep</value>
+      <value type="QString" key="Qt4ProjectManager.MakeStep.MakeArguments">clean</value>
+     </valuemap>
+     <value type="qlonglong" key="ProjectExplorer.BuildStepList.StepsCount">1</value>
+     <value type="QString" key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName">Очистка</value>
+     <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">Очистка</value>
+     <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">ProjectExplorer.BuildSteps.Clean</value>
+    </valuemap>
+    <value type="int" key="ProjectExplorer.BuildConfiguration.BuildStepListCount">2</value>
+    <value type="bool" key="ProjectExplorer.BuildConfiguration.ClearSystemEnvironment">false</value>
+    <valuelist type="QVariantList" key="ProjectExplorer.BuildConfiguration.CustomParsers"/>
+    <value type="bool" key="ProjectExplorer.BuildConfiguration.ParseStandardOutput">false</value>
+    <valuelist type="QVariantList" key="ProjectExplorer.BuildConfiguration.UserEnvironmentChanges"/>
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">Отладка</value>
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">Qt4ProjectManager.Qt4BuildConfiguration</value>
+    <value type="int" key="Qt4ProjectManager.Qt4BuildConfiguration.BuildConfiguration">2</value>
+   </valuemap>
+   <valuemap type="QVariantMap" key="ProjectExplorer.Target.BuildConfiguration.1">
+    <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory">C:\Users\amvey\Documents\GitHub\TIMP-Task\MyTcpServer\build\Desktop_Qt_6_8_0_shared_MinGW_w64_MINGW64_MSYS2-Release</value>
+    <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory.shadowDir">C:/Users/amvey/Documents/GitHub/TIMP-Task/MyTcpServer/build/Desktop_Qt_6_8_0_shared_MinGW_w64_MINGW64_MSYS2-Release</value>
+    <valuemap type="QVariantMap" key="ProjectExplorer.BuildConfiguration.BuildStepList.0">
+     <valuemap type="QVariantMap" key="ProjectExplorer.BuildStepList.Step.0">
+      <value type="bool" key="ProjectExplorer.BuildStep.Enabled">true</value>
+      <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">QtProjectManager.QMakeBuildStep</value>
+      <value type="bool" key="QtProjectManager.QMakeBuildStep.QMakeForced">false</value>
+      <valuelist type="QVariantList" key="QtProjectManager.QMakeBuildStep.SelectedAbis"/>
+     </valuemap>
+     <valuemap type="QVariantMap" key="ProjectExplorer.BuildStepList.Step.1">
+      <value type="bool" key="ProjectExplorer.BuildStep.Enabled">true</value>
+      <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">Qt4ProjectManager.MakeStep</value>
+     </valuemap>
+     <value type="qlonglong" key="ProjectExplorer.BuildStepList.StepsCount">2</value>
+     <value type="QString" key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName">Сборка</value>
+     <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">Сборка</value>
+     <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">ProjectExplorer.BuildSteps.Build</value>
+    </valuemap>
+    <valuemap type="QVariantMap" key="ProjectExplorer.BuildConfiguration.BuildStepList.1">
+     <valuemap type="QVariantMap" key="ProjectExplorer.BuildStepList.Step.0">
+      <value type="bool" key="ProjectExplorer.BuildStep.Enabled">true</value>
+      <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">Qt4ProjectManager.MakeStep</value>
+      <value type="QString" key="Qt4ProjectManager.MakeStep.MakeArguments">clean</value>
+     </valuemap>
+     <value type="qlonglong" key="ProjectExplorer.BuildStepList.StepsCount">1</value>
+     <value type="QString" key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName">Очистка</value>
+     <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">Очистка</value>
+     <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">ProjectExplorer.BuildSteps.Clean</value>
+    </valuemap>
+    <value type="int" key="ProjectExplorer.BuildConfiguration.BuildStepListCount">2</value>
+    <value type="bool" key="ProjectExplorer.BuildConfiguration.ClearSystemEnvironment">false</value>
+    <valuelist type="QVariantList" key="ProjectExplorer.BuildConfiguration.CustomParsers"/>
+    <value type="bool" key="ProjectExplorer.BuildConfiguration.ParseStandardOutput">false</value>
+    <valuelist type="QVariantList" key="ProjectExplorer.BuildConfiguration.UserEnvironmentChanges"/>
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">Выпуск</value>
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">Qt4ProjectManager.Qt4BuildConfiguration</value>
+    <value type="int" key="Qt4ProjectManager.Qt4BuildConfiguration.BuildConfiguration">0</value>
+    <value type="int" key="QtQuickCompiler">0</value>
+   </valuemap>
+   <valuemap type="QVariantMap" key="ProjectExplorer.Target.BuildConfiguration.2">
+    <value type="int" key="EnableQmlDebugging">0</value>
+    <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory">C:\Users\amvey\Documents\GitHub\TIMP-Task\MyTcpServer\build\Desktop_Qt_6_8_0_shared_MinGW_w64_MINGW64_MSYS2-Profile</value>
+    <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory.shadowDir">C:/Users/amvey/Documents/GitHub/TIMP-Task/MyTcpServer/build/Desktop_Qt_6_8_0_shared_MinGW_w64_MINGW64_MSYS2-Profile</value>
+    <valuemap type="QVariantMap" key="ProjectExplorer.BuildConfiguration.BuildStepList.0">
+     <valuemap type="QVariantMap" key="ProjectExplorer.BuildStepList.Step.0">
+      <value type="bool" key="ProjectExplorer.BuildStep.Enabled">true</value>
+      <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">QtProjectManager.QMakeBuildStep</value>
+      <value type="bool" key="QtProjectManager.QMakeBuildStep.QMakeForced">false</value>
+      <valuelist type="QVariantList" key="QtProjectManager.QMakeBuildStep.SelectedAbis"/>
+     </valuemap>
+     <valuemap type="QVariantMap" key="ProjectExplorer.BuildStepList.Step.1">
+      <value type="bool" key="ProjectExplorer.BuildStep.Enabled">true</value>
+      <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">Qt4ProjectManager.MakeStep</value>
+     </valuemap>
+     <value type="qlonglong" key="ProjectExplorer.BuildStepList.StepsCount">2</value>
+     <value type="QString" key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName">Сборка</value>
+     <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">Сборка</value>
+     <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">ProjectExplorer.BuildSteps.Build</value>
+    </valuemap>
+    <valuemap type="QVariantMap" key="ProjectExplorer.BuildConfiguration.BuildStepList.1">
+     <valuemap type="QVariantMap" key="ProjectExplorer.BuildStepList.Step.0">
+      <value type="bool" key="ProjectExplorer.BuildStep.Enabled">true</value>
+      <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">Qt4ProjectManager.MakeStep</value>
+      <value type="QString" key="Qt4ProjectManager.MakeStep.MakeArguments">clean</value>
+     </valuemap>
+     <value type="qlonglong" key="ProjectExplorer.BuildStepList.StepsCount">1</value>
+     <value type="QString" key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName">Очистка</value>
+     <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">Очистка</value>
+     <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">ProjectExplorer.BuildSteps.Clean</value>
+    </valuemap>
+    <value type="int" key="ProjectExplorer.BuildConfiguration.BuildStepListCount">2</value>
+    <value type="bool" key="ProjectExplorer.BuildConfiguration.ClearSystemEnvironment">false</value>
+    <valuelist type="QVariantList" key="ProjectExplorer.BuildConfiguration.CustomParsers"/>
+    <value type="bool" key="ProjectExplorer.BuildConfiguration.ParseStandardOutput">false</value>
+    <valuelist type="QVariantList" key="ProjectExplorer.BuildConfiguration.UserEnvironmentChanges"/>
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">Профилирование</value>
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">Qt4ProjectManager.Qt4BuildConfiguration</value>
+    <value type="int" key="Qt4ProjectManager.Qt4BuildConfiguration.BuildConfiguration">0</value>
+    <value type="int" key="QtQuickCompiler">0</value>
+    <value type="int" key="SeparateDebugInfo">0</value>
+   </valuemap>
+   <value type="qlonglong" key="ProjectExplorer.Target.BuildConfigurationCount">3</value>
+   <valuemap type="QVariantMap" key="ProjectExplorer.Target.DeployConfiguration.0">
+    <valuemap type="QVariantMap" key="ProjectExplorer.BuildConfiguration.BuildStepList.0">
+     <value type="qlonglong" key="ProjectExplorer.BuildStepList.StepsCount">0</value>
+     <value type="QString" key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName">Развёртывание</value>
+     <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">Развёртывание</value>
+     <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">ProjectExplorer.BuildSteps.Deploy</value>
+    </valuemap>
+    <value type="int" key="ProjectExplorer.BuildConfiguration.BuildStepListCount">1</value>
+    <valuemap type="QVariantMap" key="ProjectExplorer.DeployConfiguration.CustomData"/>
+    <value type="bool" key="ProjectExplorer.DeployConfiguration.CustomDataEnabled">false</value>
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">ProjectExplorer.DefaultDeployConfiguration</value>
+   </valuemap>
+   <value type="qlonglong" key="ProjectExplorer.Target.DeployConfigurationCount">1</value>
+   <valuemap type="QVariantMap" key="ProjectExplorer.Target.RunConfiguration.0">
+    <value type="bool" key="Analyzer.Perf.Settings.UseGlobalSettings">true</value>
+    <value type="bool" key="Analyzer.QmlProfiler.Settings.UseGlobalSettings">true</value>
+    <value type="int" key="Analyzer.Valgrind.Callgrind.CostFormat">0</value>
+    <value type="bool" key="Analyzer.Valgrind.Settings.UseGlobalSettings">true</value>
+    <valuelist type="QVariantList" key="CustomOutputParsers"/>
+    <value type="int" key="PE.EnvironmentAspect.Base">2</value>
+    <valuelist type="QVariantList" key="PE.EnvironmentAspect.Changes"/>
+    <value type="bool" key="PE.EnvironmentAspect.PrintOnRun">false</value>
+    <value type="QString" key="PerfRecordArgsId">-e cpu-cycles --call-graph &quot;dwarf,4096&quot; -F 250</value>
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName"></value>
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">Qt4ProjectManager.Qt4RunConfiguration:C:/Users/amvey/Documents/GitHub/TIMP-Task/MyTcpServer/MyTcpServer.pro</value>
+    <value type="QString" key="ProjectExplorer.RunConfiguration.BuildKey">C:/Users/amvey/Documents/GitHub/TIMP-Task/MyTcpServer/MyTcpServer.pro</value>
+    <value type="bool" key="ProjectExplorer.RunConfiguration.Customized">false</value>
+    <value type="bool" key="RunConfiguration.UseCppDebuggerAuto">true</value>
+    <value type="bool" key="RunConfiguration.UseLibrarySearchPath">true</value>
+    <value type="bool" key="RunConfiguration.UseQmlDebuggerAuto">true</value>
+    <value type="QString" key="RunConfiguration.WorkingDirectory.default">C:/Users/amvey/Documents/GitHub/TIMP-Task/MyTcpServer/build/Desktop_Qt_6_8_0_shared_MinGW_w64_MINGW64_MSYS2-Debug</value>
+   </valuemap>
+   <value type="qlonglong" key="ProjectExplorer.Target.RunConfigurationCount">1</value>
+  </valuemap>
+ </data>
+ <data>
+  <variable>ProjectExplorer.Project.TargetCount</variable>
+  <value type="qlonglong">1</value>
+ </data>
+ <data>
+  <variable>ProjectExplorer.Project.Updater.FileVersion</variable>
+  <value type="int">22</value>
+ </data>
+ <data>
+  <variable>Version</variable>
+  <value type="int">22</value>
+ </data>
+</qtcreator>
+
+
+--------------------------------------------------
+File End
+--------------------------------------------------
+
+
+MyTcpServer\readme_docker.txt
+File type: .txt
+# сборка образа
+docker build -t timp-echo-server .
+
+# запуск контейнера
+docker run -d -p 54678:54678 --name my-server timp-echo-server
+
+# остановка
+docker stop my-server
+
+# удаление контейнера
+docker rm my-server
+
+--------------------------------------------------
+File End
+--------------------------------------------------
+
+
+MyTcpServer\.qtcreator\project.json
+File type: .json
+{
+    "$schema": "https://download.qt.io/official_releases/qtcreator/latest/installer_source/jsonschemas/project.json",
+    "files.exclude": [
+        ".qtcreator/project.json.user"
+    ]
+}
+
+
+--------------------------------------------------
+File End
+--------------------------------------------------
+
+
+MyTcpServer\.qtcreator\project.json.user
+File type: .user
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE QtCreatorProject>
+<!-- Written by QtCreator 14.0.1, 2026-04-20T20:27:03. -->
+<qtcreator>
+ <data>
+  <variable>EnvironmentId</variable>
+  <value type="QByteArray">{07a7221a-c1c0-4e3b-a9cf-83f63194f3e1}</value>
+ </data>
+ <data>
+  <variable>ProjectExplorer.Project.ActiveTarget</variable>
+  <value type="qlonglong">0</value>
+ </data>
+ <data>
+  <variable>ProjectExplorer.Project.EditorSettings</variable>
+  <valuemap type="QVariantMap">
+   <value type="bool" key="EditorConfiguration.AutoIndent">true</value>
+   <value type="bool" key="EditorConfiguration.AutoSpacesForTabs">false</value>
+   <value type="bool" key="EditorConfiguration.CamelCaseNavigation">true</value>
+   <valuemap type="QVariantMap" key="EditorConfiguration.CodeStyle.0">
+    <value type="QString" key="language">Cpp</value>
+    <valuemap type="QVariantMap" key="value">
+     <value type="QByteArray" key="CurrentPreferences">CppGlobal</value>
+    </valuemap>
+   </valuemap>
+   <valuemap type="QVariantMap" key="EditorConfiguration.CodeStyle.1">
+    <value type="QString" key="language">QmlJS</value>
+    <valuemap type="QVariantMap" key="value">
+     <value type="QByteArray" key="CurrentPreferences">QmlJSGlobal</value>
+    </valuemap>
+   </valuemap>
+   <value type="qlonglong" key="EditorConfiguration.CodeStyle.Count">2</value>
+   <value type="QByteArray" key="EditorConfiguration.Codec">UTF-8</value>
+   <value type="bool" key="EditorConfiguration.ConstrainTooltips">false</value>
+   <value type="int" key="EditorConfiguration.IndentSize">4</value>
+   <value type="bool" key="EditorConfiguration.KeyboardTooltips">false</value>
+   <value type="int" key="EditorConfiguration.MarginColumn">80</value>
+   <value type="bool" key="EditorConfiguration.MouseHiding">true</value>
+   <value type="bool" key="EditorConfiguration.MouseNavigation">true</value>
+   <value type="int" key="EditorConfiguration.PaddingMode">1</value>
+   <value type="int" key="EditorConfiguration.PreferAfterWhitespaceComments">0</value>
+   <value type="bool" key="EditorConfiguration.PreferSingleLineComments">false</value>
+   <value type="bool" key="EditorConfiguration.ScrollWheelZooming">true</value>
+   <value type="bool" key="EditorConfiguration.ShowMargin">false</value>
+   <value type="int" key="EditorConfiguration.SmartBackspaceBehavior">2</value>
+   <value type="bool" key="EditorConfiguration.SmartSelectionChanging">true</value>
+   <value type="bool" key="EditorConfiguration.SpacesForTabs">true</value>
+   <value type="int" key="EditorConfiguration.TabKeyBehavior">0</value>
+   <value type="int" key="EditorConfiguration.TabSize">8</value>
+   <value type="bool" key="EditorConfiguration.UseGlobal">true</value>
+   <value type="bool" key="EditorConfiguration.UseIndenter">false</value>
+   <value type="int" key="EditorConfiguration.Utf8BomBehavior">1</value>
+   <value type="bool" key="EditorConfiguration.addFinalNewLine">true</value>
+   <value type="bool" key="EditorConfiguration.cleanIndentation">true</value>
+   <value type="bool" key="EditorConfiguration.cleanWhitespace">true</value>
+   <value type="QString" key="EditorConfiguration.ignoreFileTypes">*.md, *.MD, Makefile</value>
+   <value type="bool" key="EditorConfiguration.inEntireDocument">false</value>
+   <value type="bool" key="EditorConfiguration.skipTrailingWhitespace">true</value>
+   <value type="bool" key="EditorConfiguration.tintMarginArea">true</value>
+  </valuemap>
+ </data>
+ <data>
+  <variable>ProjectExplorer.Project.PluginSettings</variable>
+  <valuemap type="QVariantMap">
+   <valuemap type="QVariantMap" key="AutoTest.ActiveFrameworks">
+    <value type="bool" key="AutoTest.Framework.Boost">true</value>
+    <value type="bool" key="AutoTest.Framework.CTest">false</value>
+    <value type="bool" key="AutoTest.Framework.Catch">true</value>
+    <value type="bool" key="AutoTest.Framework.GTest">true</value>
+    <value type="bool" key="AutoTest.Framework.QtQuickTest">true</value>
+    <value type="bool" key="AutoTest.Framework.QtTest">true</value>
+   </valuemap>
+   <value type="bool" key="AutoTest.ApplyFilter">false</value>
+   <valuemap type="QVariantMap" key="AutoTest.CheckStates"/>
+   <valuelist type="QVariantList" key="AutoTest.PathFilters"/>
+   <value type="int" key="AutoTest.RunAfterBuild">0</value>
+   <value type="bool" key="AutoTest.UseGlobal">true</value>
+   <valuemap type="QVariantMap" key="ClangTools">
+    <value type="bool" key="ClangTools.AnalyzeOpenFiles">true</value>
+    <value type="bool" key="ClangTools.BuildBeforeAnalysis">true</value>
+    <value type="QString" key="ClangTools.DiagnosticConfig">Builtin.DefaultTidyAndClazy</value>
+    <value type="int" key="ClangTools.ParallelJobs">6</value>
+    <value type="bool" key="ClangTools.PreferConfigFile">true</value>
+    <valuelist type="QVariantList" key="ClangTools.SelectedDirs"/>
+    <valuelist type="QVariantList" key="ClangTools.SelectedFiles"/>
+    <valuelist type="QVariantList" key="ClangTools.SuppressedDiagnostics"/>
+    <value type="bool" key="ClangTools.UseGlobalSettings">true</value>
+   </valuemap>
+  </valuemap>
+ </data>
+ <data>
+  <variable>ProjectExplorer.Project.Target.0</variable>
+  <valuemap type="QVariantMap">
+   <value type="QString" key="DeviceType">Desktop</value>
+   <value type="QString" key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName">Desktop Qt  (shared) MinGW-w64 MINGW64 (MSYS2)</value>
+   <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">Desktop Qt  (shared) MinGW-w64 MINGW64 (MSYS2)</value>
+   <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">qt5.shared.M2_MinGW-w64_MINGW64_kit</value>
+   <value type="qlonglong" key="ProjectExplorer.Target.ActiveBuildConfiguration">-1</value>
+   <value type="qlonglong" key="ProjectExplorer.Target.ActiveDeployConfiguration">0</value>
+   <value type="qlonglong" key="ProjectExplorer.Target.ActiveRunConfiguration">0</value>
+   <value type="qlonglong" key="ProjectExplorer.Target.BuildConfigurationCount">0</value>
+   <valuemap type="QVariantMap" key="ProjectExplorer.Target.DeployConfiguration.0">
+    <valuemap type="QVariantMap" key="ProjectExplorer.BuildConfiguration.BuildStepList.0">
+     <value type="qlonglong" key="ProjectExplorer.BuildStepList.StepsCount">0</value>
+     <value type="QString" key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName">Развёртывание</value>
+     <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">Развёртывание</value>
+     <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">ProjectExplorer.BuildSteps.Deploy</value>
+    </valuemap>
+    <value type="int" key="ProjectExplorer.BuildConfiguration.BuildStepListCount">1</value>
+    <valuemap type="QVariantMap" key="ProjectExplorer.DeployConfiguration.CustomData"/>
+    <value type="bool" key="ProjectExplorer.DeployConfiguration.CustomDataEnabled">false</value>
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">ProjectExplorer.DefaultDeployConfiguration</value>
+   </valuemap>
+   <value type="qlonglong" key="ProjectExplorer.Target.DeployConfigurationCount">1</value>
+   <valuemap type="QVariantMap" key="ProjectExplorer.Target.RunConfiguration.0">
+    <value type="bool" key="Analyzer.Perf.Settings.UseGlobalSettings">true</value>
+    <value type="bool" key="Analyzer.QmlProfiler.Settings.UseGlobalSettings">true</value>
+    <value type="int" key="Analyzer.Valgrind.Callgrind.CostFormat">0</value>
+    <value type="bool" key="Analyzer.Valgrind.Settings.UseGlobalSettings">true</value>
+    <valuelist type="QVariantList" key="CustomOutputParsers"/>
+    <value type="int" key="PE.EnvironmentAspect.Base">2</value>
+    <valuelist type="QVariantList" key="PE.EnvironmentAspect.Changes"/>
+    <value type="bool" key="PE.EnvironmentAspect.PrintOnRun">false</value>
+    <value type="QString" key="PerfRecordArgsId">-e cpu-cycles --call-graph &quot;dwarf,4096&quot; -F 250</value>
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName"></value>
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">ProjectExplorer.CustomExecutableRunConfiguration</value>
+    <value type="QString" key="ProjectExplorer.RunConfiguration.BuildKey"></value>
+    <value type="bool" key="ProjectExplorer.RunConfiguration.Customized">false</value>
+    <value type="bool" key="RunConfiguration.UseCppDebuggerAuto">true</value>
+    <value type="bool" key="RunConfiguration.UseQmlDebuggerAuto">true</value>
+   </valuemap>
+   <value type="qlonglong" key="ProjectExplorer.Target.RunConfigurationCount">1</value>
+  </valuemap>
+ </data>
+ <data>
+  <variable>ProjectExplorer.Project.TargetCount</variable>
+  <value type="qlonglong">1</value>
+ </data>
+ <data>
+  <variable>ProjectExplorer.Project.Updater.FileVersion</variable>
+  <value type="int">22</value>
+ </data>
+ <data>
+  <variable>Version</variable>
+  <value type="int">22</value>
+ </data>
+</qtcreator>
+
+
+--------------------------------------------------
+File End
+--------------------------------------------------
