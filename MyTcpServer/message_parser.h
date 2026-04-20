@@ -202,8 +202,8 @@ private:
         case CMD_CALCULATE:
             if (result.params.size() != 3)
             {
-                result.error = "Calculate function requires exactly 3 function argumants";
-                return false
+                result.error = "Calculate function requires exactly 3 function arguments";
+                return false;
             };
 
         case CMD_UNKNOWN:

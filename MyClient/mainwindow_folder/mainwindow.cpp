@@ -1,7 +1,7 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
-#include "logindialog.h"
-#include "regdialog.h"
+#include "../logindialog_folder/logindialog.h"
+#include "../regdialog_folder/regdialog.h"
 #include <QMessageBox>
 #include <QDebug>
 

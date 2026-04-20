@@ -3,7 +3,6 @@
 
 #include <QDialog>
 #include <QTcpSocket>
-#include <ui_logindialog.h>
 
 namespace Ui{
 class LoginDialog;

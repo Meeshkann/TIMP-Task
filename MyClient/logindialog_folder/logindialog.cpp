@@ -1,4 +1,5 @@
-#include <logindialog.h>
+#include "logindialog.h"
+#include "ui_logindialog.h"
 #include <QMessageBox>
 #include <QDebug>
 
