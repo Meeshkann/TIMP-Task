@@ -2,5 +2,6 @@
     <qresource prefix="/new/prefix1"/>
     <qresource prefix="/">
         <file>image/func.png</file>
+        <file>image/cat.png</file>
     </qresource>
 </RCC>

@@ -91,9 +91,9 @@
    <property name="geometry">
     <rect>
      <x>-60</x>
-     <y>-90</y>
-     <width>561</width>
-     <height>401</height>
+     <y>150</y>
+     <width>191</width>
+     <height>161</height>
     </rect>
    </property>
    <property name="lineWidth">
@@ -103,7 +103,7 @@
     <string/>
    </property>
    <property name="pixmap">
-    <pixmap>../image/cat.png</pixmap>
+    <pixmap resource="../Images.qrc">:/image/cat.png</pixmap>
    </property>
    <property name="scaledContents">
     <bool>true</bool>
@@ -116,6 +116,8 @@
    </property>
   </widget>
  </widget>
- <resources/>
+ <resources>
+  <include location="../Images.qrc"/>
+ </resources>
  <connections/>
 </ui>

@@ -4,6 +4,9 @@
 
 #include "mytcpserver.h"
 #include "mydb.h"
+#include "myFunction.h"
+
+myFunc solver;
 
 MyTcpServer::~MyTcpServer()
 {
@@ -216,7 +219,14 @@ void MyTcpServer::slotServerRead()
         break;
 
     case CommandParser::CMD_CALCULATE:
+    {
+        int a = cmd.params[0].toInt();
+        int b = cmd.params[1].toInt();
+        int c = cmd.params[2].toInt();
+        QString data = solver.generateFunctionData(a, b, c);
+        socket->write(("SUCCESS:" + data + "\r\n").toUtf8());
         break;
+    }
 
     default:
         socket->write("ERROR: Unknown command\r\n");

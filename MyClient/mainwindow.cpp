@@ -1,7 +1,7 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
-#include "../logindialog_folder/logindialog.h"
-#include "../regdialog_folder/regdialog.h"
+#include "logindialog.h"
+#include "regdialog.h"
 #include <QMessageBox>
 #include <QDebug>
 
@@ -145,10 +145,22 @@ void MainWindow::updateTable(const QString &data)
     ui->tableWidget->setHorizontalHeaderLabels({"X", "Y"});
 
 
-    QGraphicsView view = ui->graphicsView;
+    QString trimmed = data;
+    if (trimmed.startsWith("SUCCESS:"))
+        trimmed = trimmed.mid(8);
 
-    double scaleX = 10;
-    double scaleY = 10;
+    QStringList points = trimmed.split(';', Qt::SkipEmptyParts);
+    ui->tableWidget->setRowCount(points.size());
+    ui->tableWidget->setColumnCount(2);
+    ui->tableWidget->setHorizontalHeaderLabels({"X", "Y"});
+
+    for (int i = 0; i < points.size(); ++i) {
+        QStringList xy = points[i].split(',');
+        if (xy.size() == 2) {
+            ui->tableWidget->setItem(i, 0, new QTableWidgetItem(xy[0]));
+            ui->tableWidget->setItem(i, 1, new QTableWidgetItem(xy[1]));
+        }
+    }
 
 
 
