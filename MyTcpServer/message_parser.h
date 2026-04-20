@@ -16,6 +16,7 @@ public:
         CMD_AUTH,
         CMD_FORGOT_PASSWORD,
         CMD_HELP,
+        CMD_CALCULATE,
     };
 
     Commands stringToCommand(const QString& cmd) {
@@ -24,18 +25,20 @@ public:
         if (cmd == "auth") return CMD_AUTH;
         if (cmd == "forgot" || cmd == "forgot_password") return CMD_FORGOT_PASSWORD;
         if (cmd == "help" || cmd == "?") return CMD_HELP;
+        if (cmd == "calculate") return CMD_CALCULATE;
         return CMD_UNKNOWN;
     }
 
 
     QString commandToString(Commands cmd) {
         switch(cmd) {
-        case CMD_REGISTER: return "REGISTER";
-        case CMD_LOGIN:    return "LOGIN";
-        case CMD_AUTH:     return "AUTH";
-        case CMD_FORGOT_PASSWORD:return "FORGOT_PASSWORD";
-        case CMD_HELP:     return "HELP";
-        default:           return "UNKNOWN";
+        case CMD_REGISTER:          return "REGISTER";
+        case CMD_LOGIN:             return "LOGIN";
+        case CMD_AUTH:              return "AUTH";
+        case CMD_FORGOT_PASSWORD:   return "FORGOT_PASSWORD";
+        case CMD_HELP:              return "HELP";
+        case CMD_CALCULATE:         return "CALCULATE";
+        default:                    return "UNKNOWN";
         }
     }
 
@@ -118,6 +121,7 @@ public:
                "  login||login||password     - login\r\n"
                "  auth||login||password      - authenticate\r\n"
                "  forgot||email||newpassword - reset password by email\r\n"
+               "  calculate||a||b||c         - calculate function with given arguments\r\n"
                "  help                       - show this help\r\n";
     }
 
@@ -194,6 +198,13 @@ private:
 
         case CMD_HELP:
             break;
+
+        case CMD_CALCULATE:
+            if (result.params.size() != 3)
+            {
+                result.error = "Calculate function requires exactly 3 function argumants";
+                return false
+            };
 
         case CMD_UNKNOWN:
             result.error = "Unknown command";

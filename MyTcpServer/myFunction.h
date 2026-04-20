@@ -15,7 +15,7 @@ public:
             return x*x*2 - 2*x + 1;
         }
         return 1.0f/x;
-    };
+    }
 };
 
 
