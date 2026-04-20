@@ -144,7 +144,14 @@ void MainWindow::updateTable(const QString &data)
     ui->tableWidget->setColumnCount(2);
     ui->tableWidget->setHorizontalHeaderLabels({"X", "Y"});
 
-    // заполнение данными дальше...
+
+    QGraphicsView view = ui->graphicsView;
+
+    double scaleX = 10;
+    double scaleY = 10;
+
+
+
 }
 
 

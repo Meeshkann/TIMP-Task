@@ -7,15 +7,17 @@ class myFunc {
 public:
     myFunc();
     ~myFunc();
-    float solve(int x, int b, int c) {
+    float solveForX(int x, int a, int b, int c) {
         if (x<0) {
-            return std::abs(x);
+            return std::abs(x)*a;
         }
         if (x>=1) {
-            return x*x*2 - 2*x + 1;
+            return (x*x*2 - 2*x + 1)*b;
         }
-        return 1.0f/x;
+        return c/x;
     }
+
+
 };
 
 
